@@ -1,0 +1,33 @@
+$gutter-size: 10px;
+
+.grid-item {
+  margin-bottom: $gutter-size;
+}
+
+.gutter-sizer {
+  width: $gutter-size;
+}
+
+@media screen and (max-width: 599.98px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(100% - $gutter-size);
+    // width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(50% - $gutter-size);
+    // width: 50%;
+  }
+}
+
+.item-pagination-link {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  max-width: 50%;
+  width: auto;
+}

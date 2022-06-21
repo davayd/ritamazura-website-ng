@@ -1,10 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'photography',
+    loadChildren: () =>
+      import('./pages/photography/photography.module').then(
+        (m) => m.PhotographyModule
+      ),
+  },
+  {
+    path: 'photography/:id',
+    loadChildren: () =>
+      import('./pages/photography-session/photography-session.module').then(
+        (m) => m.PhotographySessionModule
+      ),
+
+  },
+  {
+    path: 'retouch',
+    loadChildren: () =>
+      import('./pages/retouch/retouch.module').then((m) => m.RetouchModule),
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload', initialNavigation: 'enabledBlocking' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

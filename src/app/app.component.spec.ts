@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ritamazura-website-ng'`, () => {
+  it(`should have as title 'ritamazure-website-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ritamazura-website-ng');
+    expect(app.title).toEqual('ritamazure-website-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ritamazura-website-ng app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ritamazure-website-angular app is running!');
   });
 });
