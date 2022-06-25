@@ -310,19 +310,6 @@
       element.appendChild(label);
     },
 
-    displayCredits: function () {
-      credit = document.createElement('div');
-      credit.className = 'jx-credit';
-
-      text = '<em>Photo Credits:</em>';
-      if (this.imgBefore.credit) { text += ' <em>Before</em> ' + this.imgBefore.credit; }
-      if (this.imgAfter.credit) { text += ' <em>After</em> ' + this.imgAfter.credit; }
-
-      credit.innerHTML = text;
-
-      this.wrapper.appendChild(credit);
-    },
-
     setStartingPosition: function (s) {
       this.options.startingPosition = s;
     },
@@ -469,14 +456,7 @@
         if (this.imgAfter.label) { this.displayLabel(this.rightImage, this.imgAfter.label); }
       }
 
-      if (this.options.showCredits === true) {
-        this.displayCredits();
-      }
-
       var self = this;
-      window.addEventListener('resize', function () {
-        self.setWrapperDimensions();
-      });
 
       // Set up Javascript Events
       // On mousedown, call updateSlider then set animate to false

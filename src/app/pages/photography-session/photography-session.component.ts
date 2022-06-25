@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { observeOn, queueScheduler, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs';
 import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-options';
 import { NgxMasonryComponent } from 'src/app/components/ngx-masonry/ngx-masonry.component';
@@ -44,7 +44,7 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.activateRoute.paramMap
-      .pipe(takeUntil(this.destroy$), observeOn(queueScheduler))
+      .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {
         const sessionUrlName = paramMap.get('id');
         this.session = this.applicationStateService.photographySessions.find(

@@ -1,0 +1,51 @@
+<section class="flex justify-between items-center">
+  <a
+    *ngIf="session.previousSession as previousSession"
+    class="flex items-center w-auto text-left ml-0 mr-auto"
+    [routerLink]="['./../', previousSession.transliteratedUrl]"
+  >
+    <div class="w-4 h-8 mr-4">
+      <svg
+        class="w-4 h-8"
+        viewBox="0 0 9 16"
+        stroke-width="1px"
+        fill="transparent"
+      >
+        <polyline
+          stroke="#000"
+          fill="none"
+          stroke-miterlimit="10"
+          points="7.3,14.7 2.5,8 7.3,1.2"
+        ></polyline>
+      </svg>
+    </div>
+    <span class="text-xl font-bold">
+      {{ previousSession.title }}
+    </span>
+  </a>
+
+  <a
+    *ngIf="session.nextSession as nextSession"
+    class="flex items-center w-auto text-right ml-auto mr-0"
+    [routerLink]="['./../', nextSession.transliteratedUrl]"
+  >
+    <span class="pr-6 text-xl font-bold">
+      {{ nextSession.title }}
+    </span>
+    <div class="w-4 h-8">
+      <svg
+        class="rotate-180 w-4 h-8"
+        viewBox="0 0 9 16"
+        stroke-width="1px"
+        fill="transparent"
+      >
+        <polyline
+          stroke="#000"
+          fill="none"
+          stroke-miterlimit="10"
+          points="7.3,14.7 2.5,8 7.3,1.2"
+        ></polyline>
+      </svg>
+    </div>
+  </a>
+</section>
