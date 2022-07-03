@@ -1,12 +1,12 @@
 <section class="flex justify-between items-center">
   <a
     *ngIf="session.previousSession as previousSession"
-    class="flex items-center w-auto text-left ml-0 mr-auto"
+    class="paginator text-left mr-auto"
     [routerLink]="['./../', previousSession.transliteratedUrl]"
   >
-    <div class="w-4 h-8 mr-4">
+    <div class="w-[1em] h-[1em]">
       <svg
-        class="w-4 h-8"
+        class="w-full h-full"
         viewBox="0 0 9 16"
         stroke-width="1px"
         fill="transparent"
@@ -19,22 +19,22 @@
         ></polyline>
       </svg>
     </div>
-    <span class="text-xl font-bold">
+    <span class="paginator-text">
       {{ previousSession.title }}
     </span>
   </a>
 
   <a
     *ngIf="session.nextSession as nextSession"
-    class="flex items-center w-auto text-right ml-auto mr-0"
+    class="paginator text-right ml-auto"
     [routerLink]="['./../', nextSession.transliteratedUrl]"
   >
-    <span class="pr-6 text-xl font-bold">
+    <span class="paginator-text">
       {{ nextSession.title }}
     </span>
-    <div class="w-4 h-8">
+    <div class="w-[1em] h-[1em]">
       <svg
-        class="rotate-180 w-4 h-8"
+        class="rotate-180 w-full h-full"
         viewBox="0 0 9 16"
         stroke-width="1px"
         fill="transparent"

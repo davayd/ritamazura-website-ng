@@ -1,52 +1,74 @@
-<header>
-  <div class="px-2 sm:px-8">
-    <div class="relative pt-2 sm:pt-4 flex items-center justify-between">
-      <a
-        [routerLink]="['/']"
-        class="uppercase font-bold text-lg tracking-tighter transition-colors text-slate-800 hover:text-slate-600"
-      >
-        Rita Mazura
-      </a>
-      <div class="-my-1 ml-2 -mr-1 md:hidden">
-        <button
-          type="button"
-          class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+<div class="flex flex-col min-h-full">
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
+    <div class="p-2 sm:px-36">
+      <div class="relative flex items-center justify-between">
+        <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
+        <div
+          class="-my-1 -mr-1 z-[53] md:hidden"
+          [ngClass]="{ 'menu-opened': isMenuOpened }"
         >
-          <span class="sr-only">Navigation</span
-          ><svg width="24" height="24" fill="none" aria-hidden="true">
-            <path
-              d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div class="hidden md:flex items-center">
-        <nav>
-          <ul
-            class="flex items-center space-x-8 uppercase hover:text-slate-700"
+          <button
+            type="button"
+            class="burger-btn"
+            (click)="isMenuOpened = !isMenuOpened"
           >
-            <li>
-              <a class="" [routerLink]="['/photography']">Photography</a>
-            </li>
-            <li>
-              <a class="" [routerLink]="['/retouch']">Retouch</a>
-            </li>
-          </ul>
-        </nav>
+            <span class="icon"></span>
+          </button>
+        </div>
+        <div
+          class="background z-[51] block sm:hidden"
+          [ngClass]="{ 'menu-opened': isMenuOpened }"
+        ></div>
+
+        <div
+          class="animate__animated"
+          [ngClass]="{
+            'w-full h-full fixed top-0 left-0 flex items-center justify-center z-[52] animate__fadeInUp menu-opened':
+              isMenuOpened,
+            'hidden md:block': !isMenuOpened
+          }"
+          (click)="isMenuOpened = false"
+        >
+          <nav>
+            <ul
+              class="flex uppercase hover:text-slate-700"
+              [ngClass]="{
+                'flex-col justify-center space-y-2 text-2xl': isMenuOpened,
+                'items-center space-x-2': !isMenuOpened
+              }"
+            >
+              <li>
+                <a
+                  class="link"
+                  [routerLink]="['/photography']"
+                  routerLinkActive="link--active"
+                  >Photography</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link"
+                  [routerLink]="['/retouch']"
+                  routerLinkActive="link--active"
+                  >Retouch</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link"
+                  [routerLink]="['/about']"
+                  routerLinkActive="link--active"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-<main>
-  <div
-    id="main-wrapper"
-    class="max-w-3xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"
-  >
+  </header>
+  <main class="flex-1 basis-full">
     <router-outlet></router-outlet>
-  </div>
-</main>
-<footer></footer>
+  </main>
+</div>
+<!-- <footer></footer> -->

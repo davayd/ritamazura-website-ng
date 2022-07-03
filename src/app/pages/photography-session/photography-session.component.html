@@ -1,30 +1,32 @@
-<ng-container *ngIf="session; else notFound">
-  <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-10">
-    {{ session.title }}
-  </h2>
+<div id="main-wrapper" class="container">
+  <ng-container *ngIf="session; else notFound">
+    <h2 class="detail-title">
+      {{ session.title }}
+    </h2>
 
-  <div class="mb-4">
-    <ngx-masonry [options]="masonryOptions">
-      <div class="grid-sizer"></div>
-      <div class="gutter-sizer"></div>
-      <div
-        ngxMasonryItem
-        class="grid-item"
-        *ngFor="let item of session!.photos"
-      >
-        <img
-          masonryLazy
-          loading="lazy"
-          [attr.width]="item.width"
-          [attr.height]="item.height"
-          [src]="item.url"
-          alt=""
-        />
-      </div>
-    </ngx-masonry>
-  </div>
+    <div class="mb-4">
+      <ngx-masonry [options]="masonryOptions">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        <div
+          ngxMasonryItem
+          class="grid-item"
+          *ngFor="let item of session!.photos"
+        >
+          <img
+            masonryLazy
+            loading="lazy"
+            [attr.width]="item.width"
+            [attr.height]="item.height"
+            [src]="item.url"
+            alt=""
+          />
+        </div>
+      </ngx-masonry>
+    </div>
 
-  <app-paginator [session]="session"></app-paginator>
-</ng-container>
+    <app-paginator [session]="session"></app-paginator>
+  </ng-container>
 
-<ng-template #notFound> Not found </ng-template>
+  <ng-template #notFound> Not found </ng-template>
+</div>

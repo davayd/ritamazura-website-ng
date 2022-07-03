@@ -1,25 +1,27 @@
-<ng-container *ngIf="session; else notFound">
-  <h2
-    class="text-3xl font-extrabold tracking-tight text-gray-900 mb-10 text-center"
-  >
-    {{ session.title }}
-  </h2>
+<div id="main-wrapper" class="container">
+  <ng-container *ngIf="session; else notFound">
+    <h2
+      class="detail-title"
+    >
+      {{ session.title }}
+    </h2>
 
-  <div class="flex flex-col gap-4 mb-4">
-    <ng-container *ngFor="let item of session!.beforeAterterPhotos">
-      <div
-        [ngStyle]="{
-          width: innerWidth + 'px'
-        }"
-        class="juxtapose m-auto"
-      >
-        <img data-label="до" [src]="item[0].url" alt="" />
-        <img data-label="после" [src]="item[1].url" alt="" />
-      </div>
-    </ng-container>
-  </div>
+    <div class="flex flex-col gap-4 mb-4">
+      <ng-container *ngFor="let item of session!.beforeAterterPhotos">
+        <div
+          [ngStyle]="{
+            width: innerWidth + 'px'
+          }"
+          class="juxtapose m-auto"
+        >
+          <img data-label="before" [src]="item[0].url" alt="" />
+          <img data-label="after" [src]="item[1].url" alt="" />
+        </div>
+      </ng-container>
+    </div>
 
-  <app-paginator [session]="session"></app-paginator>
-</ng-container>
+    <app-paginator [session]="session"></app-paginator>
+  </ng-container>
 
-<ng-template #notFound> Not found </ng-template>
+  <ng-template #notFound> Not found </ng-template>
+</div>

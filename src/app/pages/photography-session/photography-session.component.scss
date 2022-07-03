@@ -11,8 +11,8 @@ $gutter-size: 10px;
 @media screen and (max-width: 599.98px) {
   .grid-sizer,
   .grid-item {
-    width: calc(100% - $gutter-size);
-    // width: 100%;
+    // width: calc(100% - $gutter-size);
+    width: 100%;
   }
 }
 

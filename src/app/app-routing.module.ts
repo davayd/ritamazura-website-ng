@@ -28,6 +28,16 @@ const routes: Routes = [
         (m) => m.RetouchSessionModule
       ),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/main/main.module').then((m) => m.MainModule),
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./pages/about/about.module').then((m) => m.AboutModule),
+  },
 ];
 
 @NgModule({

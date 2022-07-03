@@ -1,4 +1,3 @@
-import { Platform } from '@angular/cdk/platform';
 import {
   Component,
   OnInit,
@@ -39,7 +38,6 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
-    private platform: Platform
   ) {}
 
   ngOnInit(): void {
