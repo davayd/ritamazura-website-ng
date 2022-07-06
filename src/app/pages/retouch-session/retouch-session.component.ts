@@ -5,9 +5,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { asapScheduler, asyncScheduler, fromEvent, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
-import { debounceTime, observeOn, takeUntil, tap } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { RetouchSession } from 'src/app/models/session';
 
 declare var juxtapose: any;

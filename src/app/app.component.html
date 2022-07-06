@@ -1,63 +1,39 @@
-<div class="flex flex-col min-h-full">
-  <header class="sticky top-0 bg-white z-50 shadow-sm">
-    <div class="p-2 sm:px-36">
-      <div class="relative flex items-center justify-between">
+<!-- <div class="relative"> -->
+<header class="header bg-white shadow-sm">
+  <div class="header-announcement-bar-wrapper">
+    <div class="header-inner">
+      <div class="header-display-mobile">
         <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
-        <div
-          class="-my-1 -mr-1 z-[53] md:hidden"
-          [ngClass]="{ 'menu-opened': isMenuOpened }"
-        >
-          <button
-            type="button"
-            class="burger-btn"
-            (click)="isMenuOpened = !isMenuOpened"
-          >
-            <span class="icon"></span>
-          </button>
-        </div>
-        <div
-          class="background z-[51] block sm:hidden"
-          [ngClass]="{ 'menu-opened': isMenuOpened }"
-        ></div>
 
-        <div
-          class="animate__animated"
-          [ngClass]="{
-            'w-full h-full fixed top-0 left-0 flex items-center justify-center z-[52] animate__fadeInUp menu-opened':
-              isMenuOpened,
-            'hidden md:block': !isMenuOpened
-          }"
-          (click)="isMenuOpened = false"
-        >
+        <button type="button" class="burger-btn" (click)="toggleMenu()">
+          <span class="icon"></span>
+        </button>
+      </div>
+
+      <div class="header-display-desktop">
+        <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
+
+        <div class="header-nav">
           <nav>
-            <ul
-              class="flex uppercase hover:text-slate-700"
-              [ngClass]="{
-                'flex-col justify-center space-y-2 text-2xl': isMenuOpened,
-                'items-center space-x-2': !isMenuOpened
-              }"
-            >
-              <li>
+            <ul class="header-nav-list">
+              <li class="header-nav-item">
                 <a
-                  class="link"
                   [routerLink]="['/photography']"
-                  routerLinkActive="link--active"
+                  routerLinkActive="header-nav-item--active"
                   >Photography</a
                 >
               </li>
-              <li>
+              <li class="header-nav-item">
                 <a
-                  class="link"
                   [routerLink]="['/retouch']"
-                  routerLinkActive="link--active"
+                  routerLinkActive="header-nav-item--active"
                   >Retouch</a
                 >
               </li>
-              <li>
+              <li class="header-nav-item">
                 <a
-                  class="link"
                   [routerLink]="['/about']"
-                  routerLinkActive="link--active"
+                  routerLinkActive="header-nav-item--active"
                   >About</a
                 >
               </li>
@@ -66,9 +42,46 @@
         </div>
       </div>
     </div>
-  </header>
-  <main class="flex-1 basis-full">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+  </div>
+  <div class="header-menu" (click)="isMenuOpened = false">
+    <div class="header-menu-bg"></div>
+    <div class="header-menu-nav">
+      <nav class="header-menu-nav-list">
+        <div class="header-menu-nav-folder">
+          <ul class="header-menu-nav-folder-content">
+            <li class="header-menu-nav-item">
+              <a
+                [routerLink]="['/photography']"
+                routerLinkActive="header-menu-nav-item--active"
+                (click)="toggleMenu()"
+                >Photography</a
+              >
+            </li>
+            <li class="header-menu-nav-item">
+              <a
+                [routerLink]="['/retouch']"
+                routerLinkActive="header-menu-nav-item--active"
+                (click)="toggleMenu()"
+                >Retouch</a
+              >
+            </li>
+            <li class="header-menu-nav-item">
+              <a
+                [routerLink]="['/about']"
+                routerLinkActive="header-menu-nav-item--active"
+                (click)="toggleMenu()"
+                >About</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+<!-- </div> -->
 <!-- <footer></footer> -->

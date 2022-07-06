@@ -26,4 +26,9 @@ export class AppComponent implements OnDestroy {
     this.destroy$.next();
     this.destroy$.unsubscribe();
   }
+
+  toggleMenu() {
+    this.isMenuOpened = !this.isMenuOpened;
+    document.body.classList.toggle('header--menu-open');
+  }
 }

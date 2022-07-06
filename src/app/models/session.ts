@@ -2,6 +2,7 @@ export interface PhotoItem {
   url: string;
   width: number;
   height: number;
+  title?: string;
 }
 
 export class PhotographySession {

@@ -16,10 +16,11 @@
           <img
             masonryLazy
             loading="lazy"
+            class="w-full"
             [attr.width]="item.width"
             [attr.height]="item.height"
             [src]="item.url"
-            alt=""
+            [attr.alt]="item.title"
           />
         </div>
       </ngx-masonry>
