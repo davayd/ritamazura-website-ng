@@ -6,12 +6,6 @@
 @import "juxtapose";
 @import "animate.css";
 
-@layer components {
-  .container {
-    @apply max-w-3xl lg:max-w-7xl  mx-auto py-2 sm:py-10 px-4 sm:px-0  lg:px-8;
-  }
-}
-
 @font-face {
   font-family: "Futura";
   src: url("./assets/fonts/FuturaLT-Bold.woff2");
@@ -44,15 +38,17 @@
 }
 
 body {
-  height: 100vh;
   font-family: "Futura", monospace;
-  @apply text-neutral-900 text-sm tracking-widest uppercase;
+  @apply text-neutral-900 text-sm tracking-widest uppercase h-screen;
 
   &.header--menu-open {
     overflow: hidden;
   }
 }
 
+.container {
+  @apply max-w-3xl lg:max-w-7xl  mx-auto py-2 sm:py-10 px-4 sm:px-0  lg:px-8;
+}
 .list-container {
   @apply mt-10 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8;
 }
@@ -80,17 +76,8 @@ body {
   @apply underline;
 }
 
-$header-height: 44px;
-
 .header {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  line-height: 1;
-  pointer-events: none;
-  height: $header-height;
+  @apply z-10 absolute top-0 right-0 left-0 pointer-events-none  h-11;
 
   .header-announcement-bar-wrapper {
     @apply max-w-3xl mx-auto lg:max-w-7xl h-full px-[6px] py-3 pointer-events-auto relative z-[2];
@@ -107,22 +94,9 @@ $header-height: 44px;
 }
 
 .header-menu {
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-  will-change: opacity, visibility;
-  user-select: none;
-  text-align: center;
-  pointer-events: auto;
-  padding-top: $header-height;
   transition: visibility 600ms cubic-bezier(0.4, 0, 0.2, 1), opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @apply fixed z-[1] flex flex-col inset-0 opacity-0 invisible will-change-[opacity,visibility] select-none text-center pointer-events-auto pt-11;
 }
 
 .header-display-mobile {
@@ -217,7 +191,7 @@ $header-height: 44px;
 }
 
 .main {
-  padding-top: $header-height;
+  @apply pt-11;
 }
 
 /* styling hamb ICON */

@@ -4,103 +4,507 @@ import { ImageMode } from '../pages/photography/photography.component';
 export function generatePhotographySessions(
   imageMode: ImageMode
 ): PhotographySession[] {
-  const s1 = new PhotographySession('Session 1', 'session-1', [
+  const s1 = new PhotographySession('alyona 2021, Minsk', 'alyona-2021-Minsk', [
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00573-${imageMode}.jpg`,
-      width: 1000,
-      height: 1250,
+      url: `/assets/photos/alyona 2021, Minsk/DSC01621-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC01621-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00641-${imageMode}.jpg`,
+      url: `/assets/photos/alyona 2021, Minsk/269825067_633031087732788_7276206692202493202_n-${imageMode}.jpg`,
+      width: 500,
+      height: 631,
+      label: `269825067_633031087732788_7276206692202493202_n-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/269789330_595719721524589_2611358905846332208_n-${imageMode}.jpg`,
+      width: 500,
+      height: 631,
+      label: `269789330_595719721524589_2611358905846332208_n-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02215-${imageMode}.jpg`,
+      width: 500,
+      height: 383,
+      label: `DSC02215-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02424-${imageMode}.jpg`,
+      width: 500,
+      height: 686,
+      label: `DSC02424-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02197-${imageMode}.jpg`,
+      width: 500,
+      height: 724,
+      label: `DSC02197-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02368чб-${imageMode}.jpg`,
+      width: 500,
+      height: 670,
+      label: `DSC02368чб-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01836-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC01836-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01621-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC01621-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/269825067_633031087732788_7276206692202493202_n-${imageMode}.jpg`,
+      width: 1000,
+      height: 1263,
+      label: `269825067_633031087732788_7276206692202493202_n-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01610-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC01610-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02481-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC02481-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01876-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC01876-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/269789330_595719721524589_2611358905846332208_n-${imageMode}.jpg`,
+      width: 1000,
+      height: 1263,
+      label: `269789330_595719721524589_2611358905846332208_n-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02215-${imageMode}.jpg`,
+      width: 1000,
+      height: 766,
+      label: `DSC02215-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02424-${imageMode}.jpg`,
+      width: 1000,
+      height: 1372,
+      label: `DSC02424-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02197-${imageMode}.jpg`,
+      width: 1000,
+      height: 1448,
+      label: `DSC02197-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01836-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC01836-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02368чб-${imageMode}.jpg`,
+      width: 1000,
+      height: 1340,
+      label: `DSC02368чб-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01610-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC01610-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC02481-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC02481-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/alyona 2021, Minsk/DSC01876-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC01876-${imageMode}.jpg`,
+    },
+  ]);
+  const s2 = new PhotographySession('anya 2021, Minsk', 'anya-2021-Minsk', [
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC00917-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC00917-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC00917-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC00917-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01047-${imageMode}.jpg`,
+      width: 500,
+      height: 343,
+      label: `DSC01047-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01101чб-${imageMode}.jpg`,
+      width: 1000,
+      height: 751,
+      label: `DSC01101чб-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01101чб-${imageMode}.jpg`,
+      width: 500,
+      height: 375,
+      label: `DSC01101чб-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01119-${imageMode}.jpg`,
+      width: 1000,
+      height: 667,
+      label: `DSC01119-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01119-${imageMode}.jpg`,
+      width: 500,
+      height: 333,
+      label: `DSC01119-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01047-${imageMode}.jpg`,
+      width: 1000,
+      height: 687,
+      label: `DSC01047-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01152-${imageMode}.jpg`,
+      width: 500,
+      height: 333,
+      label: `DSC01152-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01152-${imageMode}.jpg`,
+      width: 1000,
+      height: 667,
+      label: `DSC01152-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01247-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC01247-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/anya 2021, Minsk/DSC01247-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC01247-${imageMode}.jpg`,
+    },
+  ]);
+
+  const s3 = new PhotographySession(
+    'katya 2022, Saint-Petersburb',
+    'katya-2022-Saint-Petersburb',
+    [
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05269-${imageMode}.jpg`,
+        width: 1000,
+        height: 1250,
+        label: `DSC05269-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05766-${imageMode}.jpg`,
+        width: 1000,
+        height: 1292,
+        label: `DSC05766-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC04953-${imageMode}.jpg`,
+        width: 500,
+        height: 625,
+        label: `DSC04953-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC04953-${imageMode}.jpg`,
+        width: 1000,
+        height: 1250,
+        label: `DSC04953-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06249-${imageMode}.jpg`,
+        width: 500,
+        height: 696,
+        label: `DSC06249-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06090-${imageMode}.jpg`,
+        width: 1000,
+        height: 1423,
+        label: `DSC06090-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06076-${imageMode}.jpg`,
+        width: 500,
+        height: 750,
+        label: `DSC06076-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05766-${imageMode}.jpg`,
+        width: 500,
+        height: 646,
+        label: `DSC05766-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06090-${imageMode}.jpg`,
+        width: 500,
+        height: 712,
+        label: `DSC06090-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05269-${imageMode}.jpg`,
+        width: 500,
+        height: 625,
+        label: `DSC05269-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06595-${imageMode}.jpg`,
+        width: 500,
+        height: 705,
+        label: `DSC06595-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05978бч-${imageMode}.jpg`,
+        width: 500,
+        height: 630,
+        label: `DSC05978бч-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC05978бч-${imageMode}.jpg`,
+        width: 1000,
+        height: 1260,
+        label: `DSC05978бч-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06076-${imageMode}.jpg`,
+        width: 1000,
+        height: 1500,
+        label: `DSC06076-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06446-${imageMode}.jpg`,
+        width: 1000,
+        height: 660,
+        label: `DSC06446-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06595-${imageMode}.jpg`,
+        width: 1000,
+        height: 1411,
+        label: `DSC06595-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06249-${imageMode}.jpg`,
+        width: 1000,
+        height: 1391,
+        label: `DSC06249-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/katya 2022, Saint-Petersburb/DSC06446-${imageMode}.jpg`,
+        width: 500,
+        height: 330,
+        label: `DSC06446-${imageMode}.jpg`,
+      },
+    ]
+  );
+
+  const s4 = new PhotographySession('masha 2021, Minsk', 'masha-2021-Minsk', [
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00573-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC00573-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00641-${imageMode}.jpg`,
       width: 1000,
       height: 1262,
+      label: `DSC00641-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00577-${imageMode}.jpg`,
-      width: 1000,
-      height: 1500,
+      url: `/assets/photos/masha 2021, Minsk/DSC00647-${imageMode}.jpg`,
+      width: 500,
+      height: 625,
+      label: `DSC00647-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00647-${imageMode}.jpg`,
-      width: 1000,
-      height: 1250,
+      url: `/assets/photos/masha 2021, Minsk/DSC00641-${imageMode}.jpg`,
+      width: 500,
+      height: 631,
+      label: `DSC00641-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00746-${imageMode}.jpg`,
-      width: 1000,
-      height: 1295,
-    },
-    {
-      url: `/assets/photos/masha-2021-minsk/DSC00779-${imageMode}.jpg`,
+      url: `/assets/photos/masha 2021, Minsk/DSC00779-${imageMode}.jpg`,
       width: 1000,
       height: 1225,
+      label: `DSC00779-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00750-${imageMode}.jpg`,
+      url: `/assets/photos/masha 2021, Minsk/DSC00573-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC00573-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00746-${imageMode}.jpg`,
+      width: 1000,
+      height: 1295,
+      label: `DSC00746-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00779-${imageMode}.jpg`,
+      width: 500,
+      height: 612,
+      label: `DSC00779-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00746-${imageMode}.jpg`,
+      width: 500,
+      height: 648,
+      label: `DSC00746-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00647-${imageMode}.jpg`,
+      width: 1000,
+      height: 1250,
+      label: `DSC00647-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00750-${imageMode}.jpg`,
+      width: 500,
+      height: 710,
+      label: `DSC00750-${imageMode}.jpg`,
+    },
+    {
+      url: `/assets/photos/masha 2021, Minsk/DSC00750-${imageMode}.jpg`,
       width: 1000,
       height: 1421,
+      label: `DSC00750-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/masha-2021-minsk/DSC00800-${imageMode}.jpg`,
+      url: `/assets/photos/masha 2021, Minsk/DSC00800-${imageMode}.jpg`,
       width: 1000,
       height: 1254,
-    },
-  ]);
-  const s2 = new PhotographySession('Session 2', 'session-2', [
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC02844-${imageMode}.jpg`,
-      width: 1000,
-      height: 1440,
+      label: `DSC00800-${imageMode}.jpg`,
     },
     {
-      url: `/assets/photos/nastya-2021-grodno/DSC02654-${imageMode}.jpg`,
-      width: 1000,
-      height: 1438,
-    },
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC02889-${imageMode}.jpg`,
-      width: 1000,
-      height: 1500,
-    },
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC02880-${imageMode}.jpg`,
-      width: 1000,
-      height: 732,
-    },
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC02936-${imageMode}.jpg`,
-      width: 1000,
-      height: 1500,
-    },
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC03009-${imageMode}.jpg`,
-      width: 1000,
-      height: 1451,
-    },
-    {
-      url: `/assets/photos/nastya-2021-grodno/DSC03189-${imageMode}.jpg`,
-      width: 1000,
-      height: 1359,
+      url: `/assets/photos/masha 2021, Minsk/DSC00800-${imageMode}.jpg`,
+      width: 500,
+      height: 627,
+      label: `DSC00800-${imageMode}.jpg`,
     },
   ]);
 
-  const s3 = new PhotographySession('Session 3', 'session-3', [
-    {
-      url: 'https://images.squarespace-cdn.com/content/v1/6201d5c4d2965872151b76c3/c5930746-ce02-415b-b076-dbb6e89eb76a/220322-Vogue_TK_OLD-layoutV6-5.jpg?format=1000w',
-      width: 1000,
-      height: 1359,
-    },
-    // {
-    //   url: 'https://images.squarespace-cdn.com/content/v1/6201d5c4d2965872151b76c3/632bfdd9-8732-4d26-8bce-9dbc59c0d7e1/220322-Vogue_TK_OLD-layoutV6-16.jpg?format=1000w',
-    // },
-  ]);
-
+  const s5 = new PhotographySession(
+    'nastya 2021, Grodno',
+    'nastya-2021-Grodno',
+    [
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02654-${imageMode}.jpg`,
+        width: 1000,
+        height: 1438,
+        label: `DSC02654-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02654-${imageMode}.jpg`,
+        width: 500,
+        height: 719,
+        label: `DSC02654-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02844-${imageMode}.jpg`,
+        width: 500,
+        height: 720,
+        label: `DSC02844-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02844-${imageMode}.jpg`,
+        width: 1000,
+        height: 1440,
+        label: `DSC02844-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02880-${imageMode}.jpg`,
+        width: 500,
+        height: 366,
+        label: `DSC02880-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC03189-${imageMode}.jpg`,
+        width: 500,
+        height: 680,
+        label: `DSC03189-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02889-${imageMode}.jpg`,
+        width: 500,
+        height: 750,
+        label: `DSC02889-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02880-${imageMode}.jpg`,
+        width: 1000,
+        height: 732,
+        label: `DSC02880-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC03009-${imageMode}.jpg`,
+        width: 500,
+        height: 726,
+        label: `DSC03009-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC02889-${imageMode}.jpg`,
+        width: 1000,
+        height: 1500,
+        label: `DSC02889-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC03009-${imageMode}.jpg`,
+        width: 1000,
+        height: 1451,
+        label: `DSC03009-${imageMode}.jpg`,
+      },
+      {
+        url: `/assets/photos/nastya 2021, Grodno/DSC03189-${imageMode}.jpg`,
+        width: 1000,
+        height: 1359,
+        label: `DSC03189-${imageMode}.jpg`,
+      },
+    ]
+  );
   s1.linkNext(s2);
 
   s2.linkPrevious(s1);
   s2.linkNext(s3);
 
   s3.linkPrevious(s2);
+  s3.linkNext(s4);
 
-  return [s1, s2, s3];
+  s4.linkPrevious(s3);
+  s4.linkNext(s5);
+
+  s5.linkPrevious(s4);
+
+  return [s1, s2, s3, s4, s5];
 }
