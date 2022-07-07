@@ -1,3 +1,4 @@
+import { ImageMode } from './../pages/photography/photography.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
 import { PhotographySession, RetouchSession } from '../models/session';
@@ -10,13 +11,14 @@ import { generateRetouchSessions } from './retouch-generator';
 export class ApplicationStateService {
   photographySessions: PhotographySession[] = [];
   retouchSessions: RetouchSession[] = [];
+  imageMode: ImageMode = 'desktop';
 
   constructor(private _breakpointObserver: BreakpointObserver) {
-    const imageMode = this._breakpointObserver.isMatched(Breakpoints.XSmall)
+    this.imageMode = this._breakpointObserver.isMatched(Breakpoints.XSmall)
       ? 'mobile'
       : 'desktop';
 
-    this.photographySessions = generatePhotographySessions(imageMode);
-    this.retouchSessions = generateRetouchSessions(imageMode);
+    this.photographySessions = generatePhotographySessions(this.imageMode);
+    this.retouchSessions = generateRetouchSessions(this.imageMode);
   }
 }

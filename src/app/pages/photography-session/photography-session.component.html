@@ -17,8 +17,8 @@
             masonryLazy
             loading="lazy"
             class="w-full"
-            [attr.width]="item.width"
-            [attr.height]="item.height"
+            [attr.width]="item.sizes[imageMode].width"
+            [attr.height]="item.sizes[imageMode].height"
             [src]="item.url"
             [attr.alt]="item.label"
           />

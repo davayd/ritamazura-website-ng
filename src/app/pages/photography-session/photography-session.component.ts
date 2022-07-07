@@ -31,6 +31,7 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   session?: PhotographySession;
   isNotFound = false;
   lazyImageObserver?: IntersectionObserver;
+  imageMode = this.applicationStateService.imageMode;
 
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();

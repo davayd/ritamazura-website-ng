@@ -1,7 +1,16 @@
 export interface PhotoItem {
   url: string;
-  width: number;
-  height: number;
+  sizes: {
+    mobile: {
+      width: number;
+      height: number;
+    };
+    desktop: {
+      width: number;
+      height: number;
+    };
+  };
+
   label?: string;
 }
 
