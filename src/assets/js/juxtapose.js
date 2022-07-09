@@ -430,6 +430,7 @@
 
         this.controller.setAttribute('tabindex', 0); //put the controller in the natural tab order of the document
         this.controller.setAttribute('role', 'slider');
+        this.controller.setAttribute('aria-label', 'Slider that separates before and after photos')
         this.controller.setAttribute('aria-valuenow', 50);
         this.controller.setAttribute('aria-valuemin', 0);
         this.controller.setAttribute('aria-valuemax', 100);

@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve:prod": "ng serve -c=production",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --cname=ritamazura.ru",
     "dev:ssr": "ng run ritamazura-website-ng:serve-ssr",

@@ -14,8 +14,8 @@
           }"
           class="juxtapose m-auto"
         >
-          <img data-label="before" [src]="item[0].url" [attr.alt]="item[0].label" />
-          <img data-label="after" [src]="item[1].url" [attr.alt]="item[1].label" />
+          <img loading="lazy" data-label="before" [src]="item[1].url" [attr.alt]="item[1].label" />
+          <img loading="lazy" data-label="after" [src]="item[0].url" [attr.alt]="item[0].label" />
         </div>
       </ng-container>
     </div>

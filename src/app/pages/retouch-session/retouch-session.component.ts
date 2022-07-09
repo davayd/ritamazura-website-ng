@@ -20,11 +20,8 @@ declare var juxtapose: any;
 })
 export class RetouchSessionComponent implements OnInit, OnDestroy {
   session?: RetouchSession;
-  mainWrapper = document.getElementById('main-wrapper');
-  innerWidth =
-    this.mainWrapper!.clientWidth -
-    parseInt(getComputedStyle(this.mainWrapper!).paddingLeft) * 2;
-
+  mainWrapper: HTMLElement | null = null;
+  innerWidth: number = 0;
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -33,6 +30,14 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.mainWrapper = document.getElementById('main-wrapper');
+
+    if (this.mainWrapper) {
+      this.innerWidth =
+        this.mainWrapper.clientWidth -
+        parseInt(getComputedStyle(this.mainWrapper).paddingLeft) * 2;
+    }
+
     this.activateRoute.paramMap
       .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {

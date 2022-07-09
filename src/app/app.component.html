@@ -3,9 +3,16 @@
   <div class="header-announcement-bar-wrapper">
     <div class="header-inner">
       <div class="header-display-mobile">
-        <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
+        <div class="flex-1">
+          <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
+        </div>
 
-        <button type="button" class="burger-btn" (click)="toggleMenu()">
+        <button
+          type="button"
+          class="burger-btn"
+          (click)="toggleMenu()"
+          aria-label="Menu toggler"
+        >
           <span class="icon"></span>
         </button>
       </div>
