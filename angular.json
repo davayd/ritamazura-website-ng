@@ -26,14 +26,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets",
-              "src/robots.txt"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/assets", "src/robots.txt"],
+            "styles": ["src/styles.scss"],
             "scripts": [
+              "node_modules/hammerjs/hammer.min.js",
               "src/assets/js/juxtapose.js"
             ]
           },
@@ -96,13 +92,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -149,10 +140,7 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "routes": [
-              "/",
-              "/photography/session-1"
-            ]
+            "routes": ["/", "/photography/session-1"]
           },
           "configurations": {
             "production": {

@@ -55,4 +55,13 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.unsubscribe();
   }
+
+  onSwipeLeft(e: any) {
+    console.log(e);
+  }
+
+
+  onSwipeRight(e: any) {
+    console.log(e);
+  }
 }

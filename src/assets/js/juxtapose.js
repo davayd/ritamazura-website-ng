@@ -462,41 +462,19 @@
       // Set up Javascript Events
       // On mousedown, call updateSlider then set animate to false
       // (if animate is true, adds css transition when updating).
+      const hammerHandler = new Hammer(this.slider);
+      hammerHandler.on('panleft panright', (e) => {
+        e = e.srcEvent || window.event;
+        e.preventDefault();
+        self.updateSlider(e, true);
+        animate = true;
+      });
 
       this.slider.addEventListener('mousedown', function (e) {
         e = e || window.event;
         e.preventDefault();
         self.updateSlider(e, true);
         animate = true;
-
-        this.addEventListener('mousemove', function (e) {
-          e = e || window.event;
-          e.preventDefault();
-          if (animate) { self.updateSlider(e, false); }
-        });
-
-        this.addEventListener('mouseup', function (e) {
-          e = e || window.event;
-          e.preventDefault();
-          e.stopPropagation();
-          this.removeEventListener('mouseup', arguments.callee);
-          animate = false;
-        });
-      });
-
-      this.slider.addEventListener('touchstart', function (e) {
-        e = e || window.event;
-        e.preventDefault();
-        e.stopPropagation();
-        self.updateSlider(e, true);
-
-        this.addEventListener('touchmove', function (e) {
-          e = e || window.event;
-          e.preventDefault();
-          e.stopPropagation();
-          self.updateSlider(event, false);
-        });
-
       });
 
       /* keyboard accessibility */
