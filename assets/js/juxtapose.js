@@ -463,11 +463,19 @@
       // On mousedown, call updateSlider then set animate to false
       // (if animate is true, adds css transition when updating).
       const hammerHandler = new Hammer(this.slider);
-      hammerHandler.on('panleft panright', (e) => {
+
+
+      const throttled = throttleDebounce.throttle(100, (e) => {
+        console.log(e.type)
         e = e.srcEvent || window.event;
         e.preventDefault();
         self.updateSlider(e, true);
         animate = true;
+      });
+
+      hammerHandler.on('panleft panright press', (e) => {
+
+        throttled(e);
       });
 
       this.slider.addEventListener('mousedown', function (e) {
