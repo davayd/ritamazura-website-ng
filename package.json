@@ -11,7 +11,8 @@
     "dev:ssr": "ng run ritamazura-website-ng:serve-ssr",
     "serve:ssr": "node dist/ritamazura-website-ng/server/main.js",
     "build:ssr": "ng build && ng run ritamazura-website-ng:server",
-    "prerender": "ng run ritamazura-website-ng:prerender"
+    "prerender": "ng run ritamazura-website-ng:prerender",
+    "stats": "ng build -c=production --stats-json && webpack-bundle-analyzer dist/ritamazura-website-ng/browser/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -57,6 +58,7 @@
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
     "tailwindcss": "^3.1.2",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }
