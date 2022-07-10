@@ -29,6 +29,7 @@
             "assets": ["src/assets", "src/robots.txt"],
             "styles": ["src/styles.scss"],
             "scripts": [
+              "node_modules/throttle-debounce/umd/index.js",
               "node_modules/hammerjs/hammer.min.js",
               "src/assets/js/juxtapose.js"
             ]
