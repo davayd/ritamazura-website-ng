@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   OnDestroy,
   ViewChild,
+  AfterViewInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -12,6 +13,7 @@ import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-op
 import { NgxMasonryComponent } from 'src/app/components/ngx-masonry/ngx-masonry.component';
 import { PhotographySession } from '../../models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
+import mediumZoom from 'medium-zoom';
 
 @Component({
   selector: 'app-photography-session',
@@ -19,7 +21,9 @@ import { ApplicationStateService } from '../../services/application-state.servic
   styleUrls: ['./photography-session.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PhotographySessionComponent implements OnInit, OnDestroy {
+export class PhotographySessionComponent
+  implements OnInit, OnDestroy, AfterViewInit
+{
   masonryOptions: NgxMasonryOptions = {
     gutter: '.gutter-sizer',
     columnWidth: '.grid-sizer',
@@ -55,5 +59,9 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.unsubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    mediumZoom('[data-zoomable]');
   }
 }
