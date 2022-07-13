@@ -51,3 +51,5 @@ export class RetouchSession {
     this.nextSession = s;
   }
 }
+
+export type ImageMode = 'mobile' | 'desktop';

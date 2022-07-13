@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs';
 import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-options';
 import { NgxMasonryComponent } from 'src/app/components/ngx-masonry/ngx-masonry.component';
-import { PhotographySession } from '../../models/session';
+import { PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
 import mediumZoom from 'medium-zoom';
 

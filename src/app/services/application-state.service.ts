@@ -1,7 +1,6 @@
-import { ImageMode } from './../pages/photography/photography.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
-import { PhotographySession, RetouchSession } from '../models/session';
+import { ImageMode, PhotographySession, RetouchSession } from 'models/session';
 import { generatePhotographySessions } from './photography-generator';
 import { generateRetouchSessions } from './retouch-generator';
 

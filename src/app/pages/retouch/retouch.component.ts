@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { RetouchSession } from 'src/app/models/session';
+import { RetouchSession, ImageMode } from 'models/session';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
-import { ImageMode } from '../photography/photography.component';
 
 @Component({
   selector: 'app-retouch',

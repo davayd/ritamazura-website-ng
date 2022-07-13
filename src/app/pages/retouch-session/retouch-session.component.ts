@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { takeUntil } from 'rxjs/operators';
-import { RetouchSession } from 'src/app/models/session';
+import { RetouchSession } from 'models/session';
 
 declare var juxtapose: any;
 
@@ -59,7 +59,6 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
   onSwipeLeft(e: any) {
     console.log(e);
   }
-
 
   onSwipeRight(e: any) {
     console.log(e);

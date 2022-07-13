@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { PhotographySession } from '../../models/session';
+import { ImageMode, PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
-
-export type ImageMode = 'mobile' | 'desktop';
 
 @Component({
   selector: 'app-photography',
