@@ -53,6 +53,9 @@ export class PhotographySessionComponent
         this.session = this.applicationStateService.photographySessions.find(
           (i) => i.transliteratedUrl === sessionUrlName
         );
+        setTimeout(() => {
+          mediumZoom('[data-zoomable]');
+        });
       });
   }
 
@@ -62,6 +65,6 @@ export class PhotographySessionComponent
   }
 
   ngAfterViewInit(): void {
-    mediumZoom('[data-zoomable]');
+    // mediumZoom('[data-zoomable]');
   }
 }

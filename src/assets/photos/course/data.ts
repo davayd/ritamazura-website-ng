@@ -5,20 +5,6 @@
       const title: string = 'course';
       const transliteratedUrl: string = 'course'
       const photos: [PhotoItem, PhotoItem][] = [[{
-        url: `/assets/photos/course/1 course-${imageMode}.webp`,
-        sizes: {
-            mobile: { width: 500, height: 732 },
-            desktop: { width: 1000, height: 1465 }
-        },
-        label: `1 course-${imageMode}.webp`
-    },{
-        url: `/assets/photos/course/1.1 course-${imageMode}.webp`,
-        sizes: {
-            mobile: { width: 500, height: 750 },
-            desktop: { width: 1000, height: 1500 }
-        },
-        label: `1.1 course-${imageMode}.webp`
-    },],[{
         url: `/assets/photos/course/2 course-${imageMode}.webp`,
         sizes: {
             mobile: { width: 500, height: 750 },

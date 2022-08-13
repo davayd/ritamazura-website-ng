@@ -39,6 +39,11 @@ const routes: Routes = [
       import('./pages/about/about.module').then((m) => m.AboutModule),
   },
   {
+    path: 'price',
+    loadChildren: () =>
+      import('./pages/price/price.module').then((m) => m.PriceModule),
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
