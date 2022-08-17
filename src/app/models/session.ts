@@ -12,6 +12,7 @@ export interface PhotoItem {
   };
 
   label?: string;
+  sessionRoute?: string;
 }
 
 export class PhotographySession {

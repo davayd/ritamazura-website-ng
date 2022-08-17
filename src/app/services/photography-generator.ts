@@ -2,8 +2,8 @@ import { ImageMode, PhotographySession } from 'models/session';
 
 import { generateSession as genS1 } from 'assets/Ayna 08.2022, St.Petersburg/data';
 import { generateSession as genS2 } from 'assets/Olya 08.22, St.Petersburg/data';
-import { generateSession as genS3 } from 'assets/Polina 08.2022, St.Petersburg/data';
-import { generateSession as genS4 } from 'assets/Real People 2021, Minsk/data';
+import { generateSession as genS3 } from 'assets/Polina 1 08.2022, St.Petersburg/data';
+import { generateSession as genS4 } from 'assets/Polina 2 08.2022, St.Petersburg/data';
 
 export function generatePhotographySessions(
   imageMode: ImageMode

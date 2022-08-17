@@ -31,4 +31,9 @@ export class AppComponent implements OnDestroy {
     this.isMenuOpened = !this.isMenuOpened;
     document.body.classList.toggle('header--menu-open');
   }
+
+  closeMenu() {
+    this.isMenuOpened = false;
+    document.body.classList.remove('header--menu-open');
+  }
 }

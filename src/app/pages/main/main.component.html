@@ -1,7 +1,22 @@
 <div class="container">
-  <img
-    src="/assets/photos/nastya-2021-grodno/DSC02880-desktop.jpg"
-    class="w-full h-full object-center object-contain"
-    alt="Photo with me"
-  />
+  <ngx-masonry [options]="masonryOptions">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+    <div
+      ngxMasonryItem
+      class="grid-item overflow-hidden hover:drop-shadow-lg transition-all cursor-pointer"
+      *ngFor="let item of gallery.photos"
+    >
+      <img
+        masonryLazy
+        loading="lazy"
+        class="w-full hover:scale-[1.01] transition-transform ease-in"
+        [attr.width]="item.sizes[imageMode].width"
+        [attr.height]="item.sizes[imageMode].height"
+        [src]="item.url"
+        [attr.alt]="item.label"
+        [routerLink]="[item.sessionRoute]"
+      />
+    </div>
+  </ngx-masonry>
 </div>

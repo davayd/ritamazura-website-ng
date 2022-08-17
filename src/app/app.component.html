@@ -1,10 +1,11 @@
-<!-- <div class="relative"> -->
 <header class="header bg-white shadow-sm">
   <div class="header-announcement-bar-wrapper">
     <div class="header-inner">
       <div class="header-display-mobile">
         <div class="flex-1">
-          <a [routerLink]="['/']" class="logo"> Rita Mazura </a>
+          <a [routerLink]="['/']" class="logo" (click)="closeMenu()">
+            Rita Mazura
+          </a>
         </div>
 
         <button
@@ -105,5 +106,3 @@
 <main class="main">
   <router-outlet></router-outlet>
 </main>
-<!-- </div> -->
-<!-- <footer></footer> -->

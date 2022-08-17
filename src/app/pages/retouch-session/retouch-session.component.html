@@ -4,28 +4,42 @@
       {{ session.title }}
     </h2>
 
+    <h3 *ngIf="isCourseFolder" class="text-center mb-6 text-xs">
+      Фотографии с профессионального курса по ретуши от Анастасии Воронцовой
+      "Ретачухерачу"
+    </h3>
+
     <div class="flex flex-col gap-4 mb-4">
       <ng-container *ngFor="let item of session!.beforeAterterPhotos">
-        <div
-          [ngStyle]="{
-            width: innerWidth + 'px'
-          }"
+        <figure>
+          <div
+            [ngStyle]="{
+              width: innerWidth + 'px'
+            }"
+            class="juxtapose m-auto"
+          >
+            <img
+              loading="lazy"
+              data-label="before"
+              [src]="item[1].url"
+              [attr.alt]="item[1].label"
+            />
+            <img
+              loading="lazy"
+              data-label="after"
+              [src]="item[0].url"
+              [attr.alt]="item[0].label"
+            />
+          </div>
 
-          class="juxtapose m-auto"
-        >
-          <img
-            loading="lazy"
-            data-label="before"
-            [src]="item[1].url"
-            [attr.alt]="item[1].label"
-          />
-          <img
-            loading="lazy"
-            data-label="after"
-            [src]="item[0].url"
-            [attr.alt]="item[0].label"
-          />
-        </div>
+          <figcaption
+            *ngIf="!isCourseFolder"
+            class="text-[10px] text-center text-slate-600 mt-1"
+          >
+            <span class="normal-case tracking-tight">Photographer</span>:
+            {{ item[0].label | photoAuthor }}
+          </figcaption>
+        </figure>
       </ng-container>
     </div>
 

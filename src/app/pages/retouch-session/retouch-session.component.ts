@@ -22,6 +22,8 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
   session?: RetouchSession;
   mainWrapper: HTMLElement | null = null;
   innerWidth: number = 0;
+  isCourseFolder = false;
+
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -48,6 +50,9 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
         setTimeout(() => {
           juxtapose.scanPage();
         });
+
+        this.isCourseFolder =
+          this.activateRoute.snapshot.params['id'] === 'course' || false;
       });
   }
 
