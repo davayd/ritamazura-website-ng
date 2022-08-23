@@ -1,3 +1,4 @@
+import { teamMembers } from './../../models/team';
 import {
   Component,
   OnInit,
@@ -36,6 +37,9 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();
 
+  readonly teamMembers = teamMembers;
+  currentTeamMembers: { [key: string]: string[] } = {};
+
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
@@ -47,9 +51,16 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {
         const sessionUrlName = paramMap.get('id');
+
+        if (!sessionUrlName) {
+          return;
+        }
+
         this.session = this.applicationStateService.photographySessions.find(
           (i) => i.transliteratedUrl === sessionUrlName
         );
+        this.currentTeamMembers = teamMembers[sessionUrlName];
+
         this.cdRef.markForCheck();
 
         setTimeout(() => {

@@ -17,4 +17,12 @@ export class PhotographyComponent implements OnInit {
   constructor(private _applicationStateService: ApplicationStateService) {}
 
   ngOnInit(): void {}
+
+  over(imgEl: HTMLImageElement, imgUrl: string) {
+    imgEl.src = imgUrl;
+  }
+
+  out(imgEl: HTMLImageElement, imgUrl: string) {
+    imgEl.src = imgUrl;
+  }
 }
