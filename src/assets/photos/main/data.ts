@@ -10,6 +10,24 @@ export function generateSession(imageMode: ImageMode) {
   const transliteratedUrl: string = 'main';
   const photos: PhotoItem[] = [
     {
+      url: `/assets/photos/main/6-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 395 },
+        desktop: { width: 1000, height: 791 },
+      },
+      label: `6-${imageMode}.webp`,
+      sessionRoute: '/photography/Polina.Studio,-part. 1',
+    },
+    {
+      url: `/assets/photos/main/5-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 625 },
+        desktop: { width: 1000, height: 1250 },
+      },
+      label: `5-${imageMode}.webp`,
+      sessionRoute: '/photography/Polina.Studio,-part. 2',
+    },
+    {
       url: `/assets/photos/main/1-${imageMode}.webp`,
       sizes: {
         mobile: { width: 500, height: 344 },
