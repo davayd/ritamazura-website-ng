@@ -7,7 +7,7 @@
     "serve:prod": "ng serve -c=production",
     "build": "ng build",
     "test": "ng test",
-    "deploy": "ng deploy --cname=ritamazura.ru",
+    "deploy": "ng deploy --cname=ritamazura.com",
     "dev:ssr": "ng run ritamazura-website-ng:serve-ssr",
     "serve:ssr": "node dist/ritamazura-website-ng/server/main.js",
     "build:ssr": "ng build && ng run ritamazura-website-ng:server",
