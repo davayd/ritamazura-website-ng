@@ -125,37 +125,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "ritamazura-website-ng:build:development",
-              "serverTarget": "ritamazura-website-ng:server:development"
-            },
-            "production": {
-              "browserTarget": "ritamazura-website-ng:build:production",
-              "serverTarget": "ritamazura-website-ng:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": ["/", "/photography/session-1"]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ritamazura-website-ng:build:production",
-              "serverTarget": "ritamazura-website-ng:server:production"
-            },
-            "development": {
-              "browserTarget": "ritamazura-website-ng:build:development",
-              "serverTarget": "ritamazura-website-ng:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
         }
