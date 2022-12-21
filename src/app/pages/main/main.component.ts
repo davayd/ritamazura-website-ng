@@ -2,7 +2,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-options';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { generateSession } from 'assets/main/data';
-import { PhotographySession, PhotoItem } from 'models/session';
+import { PhotographySession } from 'models/session';
+import { orderedSession } from 'src/app/services/main-generator';
+import { SITE_MAP } from 'assets/sitemap';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -19,11 +22,12 @@ export class MainComponent implements OnInit {
   };
   imageMode = this.applicationStateService.imageMode;
   gallery: PhotographySession;
+  SITE_MAP = SITE_MAP;
 
   constructor(private applicationStateService: ApplicationStateService) {
-    this.gallery = generateSession(this.imageMode);
+    const session = generateSession(this.imageMode);
+    this.gallery = orderedSession(session);
   }
 
   ngOnInit(): void {}
-
 }

@@ -1,4 +1,5 @@
-import { teamMembers } from './../../models/team';
+import { TEAM_MEMBERS } from './../../../assets/photos/teamMembers';
+import { SITE_MAP } from 'assets/sitemap';
 import {
   Component,
   OnInit,
@@ -37,7 +38,6 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();
 
-  readonly teamMembers = teamMembers;
   currentTeamMembers: { [key: string]: string[] } = {};
 
   constructor(
@@ -59,7 +59,11 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
         this.session = this.applicationStateService.photographySessions.find(
           (i) => i.transliteratedUrl === sessionUrlName
         );
-        this.currentTeamMembers = teamMembers[sessionUrlName];
+
+        if (this.session) {
+          this.currentTeamMembers =
+            TEAM_MEMBERS[this.session?.transliteratedUrl];
+        }
 
         this.cdRef.markForCheck();
 

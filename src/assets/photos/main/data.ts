@@ -10,31 +10,12 @@ export function generateSession(imageMode: ImageMode) {
   const transliteratedUrl: string = 'main';
   const photos: PhotoItem[] = [
     {
-      url: `/assets/photos/main/6-${imageMode}.webp`,
-      sizes: {
-        mobile: { width: 500, height: 395 },
-        desktop: { width: 1000, height: 791 },
-      },
-      label: `6-${imageMode}.webp`,
-      sessionRoute: '/photography/Polina.Studio,-part. 1',
-    },
-    {
-      url: `/assets/photos/main/5-${imageMode}.webp`,
-      sizes: {
-        mobile: { width: 500, height: 625 },
-        desktop: { width: 1000, height: 1250 },
-      },
-      label: `5-${imageMode}.webp`,
-      sessionRoute: '/photography/Polina.Studio,-part. 2',
-    },
-    {
       url: `/assets/photos/main/1-${imageMode}.webp`,
       sizes: {
         mobile: { width: 500, height: 344 },
         desktop: { width: 1000, height: 689 },
       },
       label: `1-${imageMode}.webp`,
-      sessionRoute: '/photography/Olya-08.22-St.Petersburg',
     },
     {
       url: `/assets/photos/main/2-${imageMode}.webp`,
@@ -43,7 +24,6 @@ export function generateSession(imageMode: ImageMode) {
         desktop: { width: 1000, height: 1250 },
       },
       label: `2-${imageMode}.webp`,
-      sessionRoute: '/photography/Polina-2 08.2022-St.Petersburg',
     },
     {
       url: `/assets/photos/main/3-${imageMode}.webp`,
@@ -52,7 +32,6 @@ export function generateSession(imageMode: ImageMode) {
         desktop: { width: 1000, height: 1250 },
       },
       label: `3-${imageMode}.webp`,
-      sessionRoute: '/photography/Ayna-08.2022-St.Petersburg',
     },
     {
       url: `/assets/photos/main/4-${imageMode}.webp`,
@@ -61,7 +40,46 @@ export function generateSession(imageMode: ImageMode) {
         desktop: { width: 1000, height: 1250 },
       },
       label: `4-${imageMode}.webp`,
-      sessionRoute: '/photography/Polina-1 08.2022-St.Petersburg',
+    },
+    {
+      url: `/assets/photos/main/5-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 625 },
+        desktop: { width: 1000, height: 1250 },
+      },
+      label: `5-${imageMode}.webp`,
+    },
+    {
+      url: `/assets/photos/main/6-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 395 },
+        desktop: { width: 1000, height: 791 },
+      },
+      label: `6-${imageMode}.webp`,
+    },
+    {
+      url: `/assets/photos/main/7-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 625 },
+        desktop: { width: 1000, height: 1251 },
+      },
+      label: `7-${imageMode}.webp`,
+    },
+    {
+      url: `/assets/photos/main/8-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 339 },
+        desktop: { width: 1000, height: 679 },
+      },
+      label: `8-${imageMode}.webp`,
+    },
+    {
+      url: `/assets/photos/main/9-${imageMode}.webp`,
+      sizes: {
+        mobile: { width: 500, height: 448 },
+        desktop: { width: 1000, height: 895 },
+      },
+      label: `9-${imageMode}.webp`,
     },
   ];
 

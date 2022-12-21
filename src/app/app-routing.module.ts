@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () =>
+      import('./pages/main/main.module').then((m) => m.MainModule),
+  },
+  {
     path: 'photography',
     loadChildren: () =>
       import('./pages/photography/photography.module').then(
@@ -27,11 +32,6 @@ const routes: Routes = [
       import('./pages/retouch-session/retouch-session.module').then(
         (m) => m.RetouchSessionModule
       ),
-  },
-  {
-    path: '',
-    loadChildren: () =>
-      import('./pages/main/main.module').then((m) => m.MainModule),
   },
   {
     path: 'about',

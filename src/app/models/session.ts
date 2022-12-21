@@ -54,3 +54,12 @@ export class RetouchSession {
 }
 
 export type ImageMode = 'mobile' | 'desktop';
+
+
+export class MainSession {
+  constructor(
+    public title: string,
+    public transliteratedUrl: string,
+    public photos: Record<string, PhotoItem>
+  ) {}
+}
