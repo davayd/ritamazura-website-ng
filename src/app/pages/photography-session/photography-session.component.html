@@ -1,10 +1,13 @@
 <div id="main-wrapper" class="container">
-  <ng-container *ngIf="session; else notFound">
+  <ng-container *ngIf="currentSession; else notFound">
     <h2 class="detail-title">
-      {{ session.title }}
+      {{ currentSession.title }}
     </h2>
 
-    <div class="text-[10px] w-full sm:w-2/4 mx-auto mb-10 normal-case" *ngIf="currentTeamMembers">
+    <div
+      class="text-[10px] w-full sm:w-2/4 mx-auto mb-10 normal-case"
+      *ngIf="currentTeamMembers"
+    >
       <div
         class="grid grid-cols-2 gap-4"
         *ngFor="let memberItem of currentTeamMembers | keyvalue"
@@ -25,7 +28,7 @@
         <div
           ngxMasonryItem
           class="grid-item"
-          *ngFor="let item of session!.photos"
+          *ngFor="let item of currentSession!.photos"
         >
           <img
             data-zoomable
@@ -41,7 +44,10 @@
       </ngx-masonry>
     </div>
 
-    <app-paginator [session]="session"></app-paginator>
+    <app-paginator
+      [previousSession]="previousSession"
+      [nextSession]="nextSession"
+    ></app-paginator>
   </ng-container>
 
   <ng-template #notFound> Not found </ng-template>

@@ -1,9 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input,
-} from '@angular/core';
+import { PhotographySession, RetouchSession } from 'models/session';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
@@ -11,9 +7,9 @@ import {
   styleUrls: ['./paginator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PaginatorComponent implements OnInit {
-  @Input() session: any;
-  constructor() {}
+export class PaginatorComponent {
+  @Input() nextSession?: PhotographySession | RetouchSession;
+  @Input() previousSession?: PhotographySession | RetouchSession;
 
-  ngOnInit(): void {}
+  constructor() {}
 }

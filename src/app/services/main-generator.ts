@@ -1,6 +1,6 @@
 import { PhotographySession, PhotoItem } from 'models/session';
 
-const order = [9, 7, 1, 2, 3, 4, 5, 6];
+const order = [9, 8, 7, 1, 2, 3, 4, 5, 6];
 
 export function orderedSession(
   session: PhotographySession

@@ -32,7 +32,10 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
     horizontalOrder: true,
   };
 
-  session?: PhotographySession;
+  currentSession?: PhotographySession;
+  nextSession?: PhotographySession;
+  previousSession?: PhotographySession;
+
   imageMode = this.applicationStateService.imageMode;
 
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
@@ -56,13 +59,29 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
           return;
         }
 
-        this.session = this.applicationStateService.photographySessions.find(
-          (i) => i.transliteratedUrl === sessionUrlName
-        );
+        const currentSessionIndex =
+          this.applicationStateService.photographySessions.findIndex(
+            (i) => i.transliteratedUrl === sessionUrlName
+          );
 
-        if (this.session) {
+        if (currentSessionIndex < 0) {
+          return;
+        }
+
+        this.currentSession =
+          this.applicationStateService.photographySessions[currentSessionIndex];
+        this.previousSession =
+          this.applicationStateService.photographySessions[
+            currentSessionIndex - 1
+          ];
+        this.nextSession =
+          this.applicationStateService.photographySessions[
+            currentSessionIndex + 1
+          ];
+
+        if (this.currentSession) {
           this.currentTeamMembers =
-            TEAM_MEMBERS[this.session?.transliteratedUrl];
+            TEAM_MEMBERS[this.currentSession?.transliteratedUrl];
         }
 
         this.cdRef.markForCheck();

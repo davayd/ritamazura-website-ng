@@ -1,7 +1,7 @@
 <div id="main-wrapper" class="container">
-  <ng-container *ngIf="session; else notFound">
+  <ng-container *ngIf="currentSession; else notFound">
     <h2 class="detail-title">
-      {{ session.title }}
+      {{ currentSession.title }}
     </h2>
 
     <h3 *ngIf="isCourseFolder" class="text-center mb-6 text-xs">
@@ -10,7 +10,7 @@
     </h3>
 
     <div class="flex flex-col gap-4 mb-4">
-      <ng-container *ngFor="let item of session!.beforeAterterPhotos">
+      <ng-container *ngFor="let item of currentSession!.beforeAterterPhotos">
         <figure>
           <div
             [ngStyle]="{
@@ -43,7 +43,10 @@
       </ng-container>
     </div>
 
-    <app-paginator [session]="session"></app-paginator>
+    <app-paginator
+      [previousSession]="previousSession"
+      [nextSession]="nextSession"
+    ></app-paginator>
   </ng-container>
 
   <ng-template #notFound> Not found </ng-template>

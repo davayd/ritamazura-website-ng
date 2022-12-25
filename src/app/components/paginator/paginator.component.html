@@ -1,6 +1,6 @@
 <section class="flex justify-between items-center">
   <a
-    *ngIf="session.previousSession as previousSession"
+    *ngIf="previousSession"
     class="paginator text-left mr-auto"
     [routerLink]="['./../', previousSession.transliteratedUrl]"
   >
@@ -25,7 +25,7 @@
   </a>
 
   <a
-    *ngIf="session.nextSession as nextSession"
+    *ngIf="nextSession"
     class="paginator text-right ml-auto"
     [routerLink]="['./../', nextSession.transliteratedUrl]"
   >

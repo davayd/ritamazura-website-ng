@@ -19,10 +19,13 @@ declare var juxtapose: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RetouchSessionComponent implements OnInit, OnDestroy {
-  session?: RetouchSession;
   mainWrapper: HTMLElement | null = null;
   innerWidth: number = 0;
   isCourseFolder = false;
+
+  currentSession?: RetouchSession;
+  nextSession?: RetouchSession;
+  previousSession?: RetouchSession;
 
   private destroy$ = new Subject<void>();
 
@@ -44,9 +47,27 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {
         const sessionUrlName = paramMap.get('id');
-        this.session = this.applicationStateService.retouchSessions.find(
-          (i) => i.transliteratedUrl === sessionUrlName
-        );
+
+        if (!sessionUrlName) {
+          return;
+        }
+
+        const currentSessionIndex =
+          this.applicationStateService.retouchSessions.findIndex(
+            (i) => i.transliteratedUrl === sessionUrlName
+          );
+
+        if (currentSessionIndex < 0) {
+          return;
+        }
+
+        this.currentSession =
+          this.applicationStateService.retouchSessions[currentSessionIndex];
+        this.previousSession =
+          this.applicationStateService.retouchSessions[currentSessionIndex - 1];
+        this.nextSession =
+          this.applicationStateService.retouchSessions[currentSessionIndex + 1];
+
         setTimeout(() => {
           juxtapose.scanPage();
         });

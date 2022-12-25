@@ -11,12 +11,5 @@ export function generateRetouchSessions(
   const s2 = genS2(imageMode);
   const s3 = genS3(imageMode);
 
-  s1.linkNext(s2);
-
-  s2.linkPrevious(s1);
-  s2.linkNext(s3);
-
-  s3.linkPrevious(s2);
-
   return [s1, s2, s3];
 }
