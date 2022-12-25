@@ -1,5 +1,5 @@
-<div id="main-wrapper" class="container">
-  <ng-container *ngIf="currentSession; else notFound">
+<ng-container *ngIf="currentSession; else notFound">
+  <div id="main-wrapper" class="container">
     <h2 class="detail-title">
       {{ currentSession.title }}
     </h2>
@@ -31,7 +31,6 @@
           *ngFor="let item of currentSession!.photos"
         >
           <img
-            data-zoomable
             masonryLazy
             loading="lazy"
             class="w-full"
@@ -39,6 +38,8 @@
             [attr.height]="item.sizes[imageMode].height"
             [src]="item.url"
             [attr.alt]="item.label"
+            [routerLink]="['/photography', currentSession.transliteratedUrl]"
+            [queryParams]="{ itemId: item.label }"
           />
         </div>
       </ngx-masonry>
@@ -48,7 +49,60 @@
       [previousSession]="previousSession"
       [nextSession]="nextSession"
     ></app-paginator>
-  </ng-container>
+  </div>
 
-  <ng-template #notFound> Not found </ng-template>
-</div>
+  <ng-container *ngIf="itemId$ | async as itemId">
+    <div class="swipper-container">
+      <div class="h-full">
+        <button class="button-back" [routerLink]="[]" [queryParams]="{}">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="53.7"
+            height="53.7"
+            viewBox="0 0 53.7 53.7"
+          >
+            <path
+              d="M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z"
+            />
+          </svg>
+        </button>
+        <div class="background"></div>
+        <swiper
+          class="swiper"
+          [slidesPerView]="1"
+          [zoom]="true"
+          [keyboard]="{
+            enabled: true
+          }"
+          [pagination]="{
+            type: 'fraction'
+          }"
+          [lazy]="true"
+          (swiper)="onSwiper($event, itemId)"
+          (slideChange)="onSlideChange($event)"
+          (destroy)="onSwiperDestroy()"
+        >
+          <ng-template
+            swiperSlide
+            *ngFor="let slide of desktopCurrentSession!.photos"
+          >
+            <div class="flex items-center justify-center h-full">
+              <div class="swiper-zoom-container">
+                <img
+                  class="object-contain h-full"
+                  [attr.data-src]="slide.url"
+                  class="swiper-lazy"
+                />
+              </div>
+            </div>
+            <div
+              class="swiper-lazy-preloader swiper-lazy-preloader-white"
+            ></div>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #notFound> Not found </ng-template>

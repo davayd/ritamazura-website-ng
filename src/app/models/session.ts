@@ -10,7 +10,6 @@ export interface PhotoItem {
       height: number;
     };
   };
-
   label?: string;
 }
 

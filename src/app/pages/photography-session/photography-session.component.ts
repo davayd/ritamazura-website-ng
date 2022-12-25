@@ -1,5 +1,4 @@
-import { TEAM_MEMBERS } from './../../../assets/photos/teamMembers';
-import { SITE_MAP } from 'assets/sitemap';
+import { generatePhotographySessions } from 'src/app/services/photography-generator';
 import {
   Component,
   OnInit,
@@ -8,14 +7,16 @@ import {
   ViewChild,
   ChangeDetectorRef,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs';
 import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-options';
 import { NgxMasonryComponent } from 'src/app/components/ngx-masonry/ngx-masonry.component';
 import { PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
-import mediumZoom from 'medium-zoom';
+import { TEAM_MEMBERS } from 'assets/teamMembers';
+import { SwiperComponent } from 'swiper/angular';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-photography-session',
@@ -36,6 +37,8 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   nextSession?: PhotographySession;
   previousSession?: PhotographySession;
 
+  desktopCurrentSession?: PhotographySession;
+
   imageMode = this.applicationStateService.imageMode;
 
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
@@ -43,10 +46,15 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
 
   currentTeamMembers: { [key: string]: string[] } = {};
 
+  itemId$ = this.activateRoute.queryParamMap.pipe(
+    map((queryParams) => queryParams.get('itemId'))
+  );
+
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -78,6 +86,8 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
           this.applicationStateService.photographySessions[
             currentSessionIndex + 1
           ];
+        this.desktopCurrentSession =
+          generatePhotographySessions('desktop')[currentSessionIndex];
 
         if (this.currentSession) {
           this.currentTeamMembers =
@@ -85,11 +95,32 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
         }
 
         this.cdRef.markForCheck();
-
-        setTimeout(() => {
-          mediumZoom('[data-zoomable]');
-        });
       });
+  }
+
+  onSwiper(swiper: SwiperComponent, photoId: string) {
+    const swiperIndex = this.findIndexByPhotoId(photoId);
+    (swiper as any).slideTo(swiperIndex);
+    document.body.classList.add('overflow-hidden');
+  }
+
+  onSwiperDestroy() {
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  onSlideChange(swiper: Swiper[]) {
+    // swiper.active
+    // this.router.navigate([], {
+    //   relativeTo: this.activateRoute,
+    //   queryParams: {
+    //     photoId: this.carouselPhotoId,
+    //   },
+    //   queryParamsHandling: 'merge',
+    // });
+  }
+
+  private findIndexByPhotoId(itemId: string) {
+    return this.currentSession?.photos.findIndex((i) => i.label === itemId);
   }
 
   ngOnDestroy(): void {
