@@ -119,24 +119,6 @@ export function generateSession(imageMode: ImageMode) {
     ],
     [
       {
-        url: `/assets/photos/beauty/21 Julia David-${imageMode}.webp`,
-        sizes: {
-          mobile: { width: 500, height: 750 },
-          desktop: { width: 1000, height: 1500 },
-        },
-        label: `21 Julia David-${imageMode}.webp`,
-      },
-      {
-        url: `/assets/photos/beauty/21.1 Julia David-${imageMode}.webp`,
-        sizes: {
-          mobile: { width: 500, height: 750 },
-          desktop: { width: 1000, height: 1500 },
-        },
-        label: `21.1 Julia David-${imageMode}.webp`,
-      },
-    ],
-    [
-      {
         url: `/assets/photos/beauty/31 Polina Solovyeva-${imageMode}.webp`,
         sizes: {
           mobile: { width: 500, height: 740 },
