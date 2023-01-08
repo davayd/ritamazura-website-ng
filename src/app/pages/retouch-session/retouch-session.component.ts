@@ -5,10 +5,14 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { fromEvent, Subject } from 'rxjs';
 import { ApplicationStateService } from 'src/app/services/application-state.service';
-import { takeUntil } from 'rxjs/operators';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 import { RetouchSession } from 'models/session';
+import {
+  GA_EVENTS,
+  GoogleAnalyticsService,
+} from 'src/app/services/google-analytics.service';
 
 declare var juxtapose: any;
 
@@ -31,7 +35,8 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private applicationStateService: ApplicationStateService
+    private applicationStateService: ApplicationStateService,
+    private readonly googleAnalyticsService: GoogleAnalyticsService
   ) {}
 
   ngOnInit(): void {
@@ -75,18 +80,16 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
         this.isCourseFolder =
           this.activateRoute.snapshot.params['id'] === 'course' || false;
       });
+
+    fromEvent(document, 'sliderUpdated')
+      .pipe(debounceTime(200), takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.googleAnalyticsService.sendEvent(GA_EVENTS.RETOUCH_SLIDER_TOUCHED);
+      });
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.unsubscribe();
-  }
-
-  onSwipeLeft(e: any) {
-    console.log(e);
-  }
-
-  onSwipeRight(e: any) {
-    console.log(e);
   }
 }

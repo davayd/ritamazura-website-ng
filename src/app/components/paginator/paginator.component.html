@@ -3,6 +3,7 @@
     *ngIf="previousSession"
     class="paginator text-left mr-auto"
     [routerLink]="['./../', previousSession.transliteratedUrl]"
+    (click)="onPrevious()"
   >
     <div class="w-[1em] h-[1em]">
       <svg
@@ -28,6 +29,7 @@
     *ngIf="nextSession"
     class="paginator text-right ml-auto"
     [routerLink]="['./../', nextSession.transliteratedUrl]"
+    (click)="onNext()"
   >
     <span class="paginator-text">
       {{ nextSession.title }}

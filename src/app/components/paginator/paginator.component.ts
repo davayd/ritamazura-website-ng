@@ -1,5 +1,9 @@
 import { PhotographySession, RetouchSession } from 'models/session';
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  GA_EVENTS,
+  GoogleAnalyticsService,
+} from 'src/app/services/google-analytics.service';
 
 @Component({
   selector: 'app-paginator',
@@ -11,5 +15,15 @@ export class PaginatorComponent {
   @Input() nextSession?: PhotographySession | RetouchSession;
   @Input() previousSession?: PhotographySession | RetouchSession;
 
-  constructor() {}
+  constructor(
+    private readonly googleAnalyticsService: GoogleAnalyticsService
+  ) {}
+
+  onPrevious() {
+    this.googleAnalyticsService.sendEvent(GA_EVENTS.PAGINATOR_LEFT);
+  }
+
+  onNext() {
+    this.googleAnalyticsService.sendEvent(GA_EVENTS.PAGINATOR_RIGHT);
+  }
 }

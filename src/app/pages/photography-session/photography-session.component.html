@@ -79,6 +79,7 @@
           [lazy]="true"
           (swiper)="onSwiper($event)"
           (destroy)="onSwiperDestroy()"
+          (slideChange)="onSlideChange()"
         >
           <ng-template
             swiperSlide

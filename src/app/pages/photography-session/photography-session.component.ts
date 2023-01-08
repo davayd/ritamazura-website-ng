@@ -17,6 +17,10 @@ import { PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
 import { TEAM_MEMBERS } from 'assets/teamMembers';
 import { SwiperComponent } from 'swiper/angular';
+import {
+  GA_EVENTS,
+  GoogleAnalyticsService,
+} from 'src/app/services/google-analytics.service';
 
 @Component({
   selector: 'app-photography-session',
@@ -54,7 +58,8 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private readonly googleAnalyticsService: GoogleAnalyticsService
   ) {}
 
   ngOnInit(): void {
@@ -110,10 +115,12 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
     (swiper as any).slideTo(swiperIndex);
 
     document.body.classList.add('overflow-hidden');
+    this.googleAnalyticsService.sendEvent(GA_EVENTS.PHOTO_VIEWER_OPEN);
   }
 
   onSwiperDestroy() {
     document.body.classList.remove('overflow-hidden');
+    this.googleAnalyticsService.sendEvent(GA_EVENTS.PHOTO_VIEWER_CLOSE);
   }
 
   closeViewer() {
@@ -122,6 +129,10 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
 
   openViewer(photoItem: string) {
     this.applicationStateService.isViewerOpened.next(photoItem);
+  }
+
+  onSlideChange() {
+    this.googleAnalyticsService.sendEvent(GA_EVENTS.PHOTO_VIEWER_SWIPE);
   }
 
   private findIndexByPhotoId(itemId: string) {
