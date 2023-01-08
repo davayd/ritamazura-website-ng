@@ -6,8 +6,9 @@ import {
   OnDestroy,
   ViewChild,
   ChangeDetectorRef,
+  HostListener,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { map, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs';
 import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-options';
@@ -16,7 +17,6 @@ import { PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
 import { TEAM_MEMBERS } from 'assets/teamMembers';
 import { SwiperComponent } from 'swiper/angular';
-import Swiper from 'swiper';
 
 @Component({
   selector: 'app-photography-session',
@@ -40,6 +40,7 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   desktopCurrentSession?: PhotographySession;
 
   imageMode = this.applicationStateService.imageMode;
+  isViewerOpened$ = this.applicationStateService.isViewerOpened.asObservable();
 
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();
@@ -53,8 +54,7 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
-    private cdRef: ChangeDetectorRef,
-    private router: Router
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -98,9 +98,17 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
       });
   }
 
-  onSwiper(swiper: SwiperComponent, photoId: string) {
-    const swiperIndex = this.findIndexByPhotoId(photoId);
+  onSwiper(swiper: SwiperComponent) {
+    const targetPhoto = this.applicationStateService.isViewerOpened.value;
+
+    if (!targetPhoto) {
+      return;
+    }
+
+    const swiperIndex = this.findIndexByPhotoId(targetPhoto);
+
     (swiper as any).slideTo(swiperIndex);
+
     document.body.classList.add('overflow-hidden');
   }
 
@@ -108,22 +116,25 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
     document.body.classList.remove('overflow-hidden');
   }
 
-  onSlideChange(swiper: Swiper[]) {
-    // swiper.active
-    // this.router.navigate([], {
-    //   relativeTo: this.activateRoute,
-    //   queryParams: {
-    //     photoId: this.carouselPhotoId,
-    //   },
-    //   queryParamsHandling: 'merge',
-    // });
+  closeViewer() {
+    this.applicationStateService.isViewerOpened.next(null);
+  }
+
+  openViewer(photoItem: string) {
+    this.applicationStateService.isViewerOpened.next(photoItem);
   }
 
   private findIndexByPhotoId(itemId: string) {
     return this.currentSession?.photos.findIndex((i) => i.label === itemId);
   }
 
+  @HostListener('window:keydown.Escape')
+  private onEscape() {
+    this.closeViewer();
+  }
+
   ngOnDestroy(): void {
+    this.applicationStateService.isViewerOpened.next(null);
     this.destroy$.next();
     this.destroy$.unsubscribe();
   }
