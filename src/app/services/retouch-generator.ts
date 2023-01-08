@@ -1,7 +1,7 @@
 import { RetouchSession, ImageMode } from 'models/session';
 
 import { generateSession as genS1 } from 'assets/beauty/data';
-import { generateSession as genS2 } from 'assets/commercial/data';
+import { generateSession as genS2 } from 'assets/fashion/data';
 import { generateSession as genS3 } from 'assets/course/data';
 
 export function generateRetouchSessions(
