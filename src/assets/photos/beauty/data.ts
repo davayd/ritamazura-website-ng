@@ -11,6 +11,42 @@ export function generateSession(imageMode: ImageMode) {
   const photos: [PhotoItem, PhotoItem][] = [
     [
       {
+        url: `/assets/photos/beauty/6 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `6 Julia David-${imageMode}.webp`,
+      },
+      {
+        url: `/assets/photos/beauty/6.1 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `6.1 Julia David-${imageMode}.webp`,
+      },
+    ],
+    [
+      {
+        url: `/assets/photos/beauty/7 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `7 Julia David-${imageMode}.webp`,
+      },
+      {
+        url: `/assets/photos/beauty/7.1 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `7.1 Julia David-${imageMode}.webp`,
+      },
+    ],
+    [
+      {
         url: `/assets/photos/beauty/8 Julia David-${imageMode}.webp`,
         sizes: {
           mobile: { width: 500, height: 649 },
@@ -119,6 +155,24 @@ export function generateSession(imageMode: ImageMode) {
     ],
     [
       {
+        url: `/assets/photos/beauty/21 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `21 Julia David-${imageMode}.webp`,
+      },
+      {
+        url: `/assets/photos/beauty/21.1 Julia David-${imageMode}.webp`,
+        sizes: {
+          mobile: { width: 500, height: 750 },
+          desktop: { width: 1000, height: 1500 },
+        },
+        label: `21.1 Julia David-${imageMode}.webp`,
+      },
+    ],
+    [
+      {
         url: `/assets/photos/beauty/31 Polina Solovyeva-${imageMode}.webp`,
         sizes: {
           mobile: { width: 500, height: 740 },
@@ -189,6 +243,7 @@ export function generateSession(imageMode: ImageMode) {
         label: `34.1 Jenifer Klupfe-${imageMode}.webp`,
       },
     ],
+
     [
       {
         url: `/assets/photos/beauty/9 rina_zima_ph-${imageMode}.webp`,
