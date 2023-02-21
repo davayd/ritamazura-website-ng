@@ -23,4 +23,8 @@ export class GoogleAnalyticsService {
   sendEvent(eventName: GA_EVENTS) {
     gtag('event', eventName);
   }
+
+  sendCustomEvent(key: string, value: any) {
+    gtag('event', key, value);
+  }
 }

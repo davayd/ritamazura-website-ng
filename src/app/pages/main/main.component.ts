@@ -5,6 +5,7 @@ import { generateSession } from 'assets/main/data';
 import { PhotographySession } from 'models/session';
 import { orderedSession } from 'src/app/services/main-generator';
 import { SITE_MAP } from 'assets/sitemap';
+import { GoogleAnalyticsService } from 'src/app/services/google-analytics.service';
 
 @Component({
   selector: 'app-main',
@@ -24,10 +25,17 @@ export class MainComponent implements OnInit {
   gallery: PhotographySession;
   SITE_MAP = SITE_MAP;
 
-  constructor(private applicationStateService: ApplicationStateService) {
+  constructor(
+    private applicationStateService: ApplicationStateService,
+    private readonly googleAnalyticsService: GoogleAnalyticsService
+  ) {
     const session = generateSession(this.imageMode);
     this.gallery = orderedSession(session);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.googleAnalyticsService.sendCustomEvent('screen_view', {
+      screen_name: 'Main',
+    });
+  }
 }

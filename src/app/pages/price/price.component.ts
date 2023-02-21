@@ -17,5 +17,8 @@ export class PriceComponent implements OnInit {
 
   ngOnInit(): void {
     this.googleAnalyticsService.sendEvent(GA_EVENTS.PAGE_PRICE_OPENED);
+    this.googleAnalyticsService.sendCustomEvent('screen_view', {
+      screen_name: 'Price',
+    });
   }
 }
