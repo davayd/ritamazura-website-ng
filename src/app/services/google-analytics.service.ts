@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
 
 const MEASUREMENT_ID = 'G-3FXJN1ZFRL';
 declare var gtag: any;
@@ -14,23 +13,13 @@ export enum GA_EVENTS {
   PAGINATOR_LEFT = 'PAGINATOR_LEFT',
   PAGINATOR_RIGHT = 'PAGINATOR_RIGHT',
 
-  PAGE_PRICE_OPENED = 'PAGE_PRICE_OPENED'
+  PAGE_PRICE_OPENED = 'PAGE_PRICE_OPENED',
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class GoogleAnalyticsService {
-  constructor(private readonly router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        gtag('config', MEASUREMENT_ID, {
-          page_path: event.urlAfterRedirects,
-        });
-      }
-    });
-  }
-
   sendEvent(eventName: GA_EVENTS) {
     gtag('event', eventName);
   }
