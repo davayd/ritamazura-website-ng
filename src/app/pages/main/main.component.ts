@@ -3,9 +3,9 @@ import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-op
 import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { generateSession } from 'assets/main/data';
 import { PhotographySession } from 'models/session';
-import { orderedSession } from 'src/app/services/main-generator';
 import { SITE_MAP } from 'assets/sitemap';
 import { GoogleAnalyticsService } from 'src/app/services/google-analytics.service';
+import { orderedSession } from 'src/app/services/photography-generator';
 
 @Component({
   selector: 'app-main',

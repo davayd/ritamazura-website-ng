@@ -10,7 +10,8 @@ export class RouteToSessionPipe implements PipeTransform {
       return '/not-found';
     }
 
-    const targetDir = SITE_MAP[label.charAt(0)];
+    const [id] = label?.split('-') ?? [];
+    const targetDir = SITE_MAP[id];
 
     return `/photography/${targetDir.routePath}`;
   }

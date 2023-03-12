@@ -67,6 +67,20 @@
             desktop: { width: 1000, height: 1250 }
         },
         label: `9-${imageMode}.webp`
+    },{
+        url: `/assets/photos/main/10-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `10-${imageMode}.webp`
+    },{
+        url: `/assets/photos/main/11-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `11-${imageMode}.webp`
     },
 ];
 

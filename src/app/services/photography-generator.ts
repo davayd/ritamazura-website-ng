@@ -1,4 +1,4 @@
-import { ImageMode, PhotographySession } from 'models/session';
+import { ImageMode, PhotographySession, PhotoItem } from 'models/session';
 
 import { generateSession as genS1 } from 'assets/Ayna 08.2022, St.Petersburg/data';
 import { generateSession as genS2 } from 'assets/Olya 08.22, St.Petersburg/data';
@@ -9,6 +9,8 @@ import { generateSession as genS6 } from 'assets/Polina.Studio, part. 2/data';
 import { generateSession as genS7 } from 'assets/Anastasia 12.2022. Model test/data';
 import { generateSession as genS8 } from 'assets/Miron 12.2022. Model test/data';
 import { generateSession as genS9 } from 'assets/Polina 10.2022. Model test/data';
+import { generateSession as genS10 } from 'assets/Kate 02.2023/data';
+import { generateSession as genS11 } from 'assets/Lera Yaskevich 02.2023/data';
 
 export function generatePhotographySessions(
   imageMode: ImageMode
@@ -22,6 +24,30 @@ export function generatePhotographySessions(
   const s7 = genS7(imageMode);
   const s8 = genS8(imageMode);
   const s9 = genS9(imageMode);
+  const s10 = genS10(imageMode);
+  const s11 = genS11(imageMode);
 
-  return [s9, s8, s7, s6, s5, s4, s3, s2, s1];
+  return [s11, s10, s9, s8, s7, s6, s5, s4, s3, s2, s1]; // Change it!
+}
+
+const order = [11, 10, 9, 8, 7, 1, 2, 3, 4, 5, 6]; // Change it!
+
+export function orderedSession(
+  session: PhotographySession
+): PhotographySession {
+  const hMap: Record<string, PhotoItem> = {};
+
+  session.photos.forEach((i) => {
+    const [id] = i.label?.split('-') ?? [];
+    const key = Number(id);
+    hMap[key] = i;
+  });
+
+  const orderedPhotos = order
+    .filter((keyId) => Boolean(hMap[keyId]))
+    .map((keyId) => hMap[keyId]);
+
+  session.photos = orderedPhotos;
+
+  return session;
 }
