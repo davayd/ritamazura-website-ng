@@ -81,6 +81,13 @@
             desktop: { width: 1000, height: 1250 }
         },
         label: `11-${imageMode}.webp`
+    },{
+        url: `/assets/photos/main/12-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 312 },
+            desktop: { width: 1000, height: 624 }
+        },
+        label: `12-${imageMode}.webp`
     },
 ];
 
