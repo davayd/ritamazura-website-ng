@@ -88,6 +88,20 @@
             desktop: { width: 1000, height: 624 }
         },
         label: `12-${imageMode}.webp`
+    },{
+        url: `/assets/photos/main/13-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 653 },
+            desktop: { width: 1000, height: 1305 }
+        },
+        label: `13-${imageMode}.webp`
+    },{
+        url: `/assets/photos/main/14-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `14-${imageMode}.webp`
     },
 ];
 
