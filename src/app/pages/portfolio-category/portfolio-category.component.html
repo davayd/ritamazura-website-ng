@@ -1,0 +1,107 @@
+<ng-container *ngIf="currentSession; else notFound">
+  <div id="main-wrapper" class="container">
+    <h2 class="detail-title">
+      {{ SITE_MAP[currentSession.sessionId].title }}
+    </h2>
+
+    <div
+      class="text-[10px] w-full sm:w-2/4 mx-auto mb-10 normal-case"
+      *ngIf="currentTeamMembers"
+    >
+      <div
+        class="grid grid-cols-2 gap-4"
+        *ngFor="let memberItem of currentTeamMembers | keyvalue"
+      >
+        <div class="text-right">{{ memberItem.key }}:</div>
+        <div class="text-left">
+          <p *ngFor="let userName of memberItem.value">
+            {{ userName }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <ngx-masonry [options]="masonryOptions">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        <div
+          ngxMasonryItem
+          class="grid-item"
+          *ngFor="let item of currentSession!.photos"
+        >
+          <img
+            masonryLazy
+            loading="lazy"
+            class="w-full hover:cursor-pointer hover:opacity-90 transition-opacity"
+            [attr.width]="item.sizes[imageMode].width"
+            [attr.height]="item.sizes[imageMode].height"
+            [src]="item.url"
+            [attr.alt]="item.label"
+            (click)="openViewer(item.label!)"
+          />
+        </div>
+      </ngx-masonry>
+    </div>
+
+    <app-paginator
+      [previousSession]="previousSession"
+      [nextSession]="nextSession"
+    ></app-paginator>
+  </div>
+
+  <ng-container *ngIf="isViewerOpened$ | async">
+    <div class="swipper-container">
+      <div class="h-full">
+        <button class="button-back" (click)="closeViewer()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="53.7"
+            height="53.7"
+            viewBox="0 0 53.7 53.7"
+          >
+            <path
+              d="M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z"
+            />
+          </svg>
+        </button>
+        <div class="background"></div>
+        <swiper
+          class="swiper"
+          [slidesPerView]="1"
+          [zoom]="true"
+          [keyboard]="{
+            enabled: true
+          }"
+          [pagination]="{
+            type: 'fraction'
+          }"
+          [lazy]="true"
+          (swiper)="onSwiper($event)"
+          (destroy)="onSwiperDestroy()"
+          (slideChange)="onSlideChange()"
+        >
+          <ng-template
+            swiperSlide
+            *ngFor="let slide of desktopCurrentSession!.photos"
+          >
+            <div class="flex items-center justify-center h-full">
+              <div class="swiper-zoom-container">
+                <img
+                  class="object-contain h-full"
+                  [attr.data-src]="slide.url"
+                  class="swiper-lazy"
+                />
+              </div>
+            </div>
+            <div
+              class="swiper-lazy-preloader swiper-lazy-preloader-white"
+            ></div>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #notFound> Not found </ng-template>

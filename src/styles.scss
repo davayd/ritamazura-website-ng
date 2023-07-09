@@ -48,7 +48,7 @@
 
 body {
   font-family: "Futura", monospace;
-  @apply text-neutral-900 text-xs tracking-widest uppercase h-screen;
+  @apply text-neutral-900 text-base tracking-widest uppercase h-screen;
 
   &.header--menu-open {
     overflow: hidden;

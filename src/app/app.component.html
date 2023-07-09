@@ -24,25 +24,18 @@
         <div class="header-nav">
           <nav>
             <ul class="header-nav-list">
-              <!-- <li class="header-nav-item">
-                <a
-                  [routerLink]="['/price']"
-                  routerLinkActive="header-nav-item--active"
-                  >Price</a
-                >
-              </li> -->
               <li class="header-nav-item">
                 <a
-                  [routerLink]="['/photography']"
+                  [routerLink]="['/portfolio']"
                   routerLinkActive="header-nav-item--active"
-                  >Photography</a
+                  >Portfolio</a
                 >
               </li>
               <li class="header-nav-item">
                 <a
-                  [routerLink]="['/retouch']"
+                  [routerLink]="['/price']"
                   routerLinkActive="header-nav-item--active"
-                  >Retouch</a
+                  >Price</a
                 >
               </li>
               <li class="header-nav-item">
@@ -64,28 +57,20 @@
       <nav class="header-menu-nav-list">
         <div class="header-menu-nav-folder">
           <ul class="header-menu-nav-folder-content">
-            <!-- <li class="header-menu-nav-item">
+            <li class="header-menu-nav-item">
+              <a
+                [routerLink]="['/portfolio']"
+                routerLinkActive="header-menu-nav-item--active"
+                (click)="toggleMenu()"
+                >Portfolio</a
+              >
+            </li>
+            <li class="header-menu-nav-item">
               <a
                 [routerLink]="['/price']"
                 routerLinkActive="header-menu-nav-item--active"
                 (click)="toggleMenu()"
                 >Price</a
-              >
-            </li> -->
-            <li class="header-menu-nav-item">
-              <a
-                [routerLink]="['/photography']"
-                routerLinkActive="header-menu-nav-item--active"
-                (click)="toggleMenu()"
-                >Photography</a
-              >
-            </li>
-            <li class="header-menu-nav-item">
-              <a
-                [routerLink]="['/retouch']"
-                routerLinkActive="header-menu-nav-item--active"
-                (click)="toggleMenu()"
-                >Retouch</a
               >
             </li>
             <li class="header-menu-nav-item">

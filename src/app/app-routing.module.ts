@@ -8,29 +8,24 @@ const routes: Routes = [
       import('./pages/main/main.module').then((m) => m.MainModule),
   },
   {
-    path: 'photography',
+    path: 'portfolio',
     loadChildren: () =>
-      import('./pages/photography/photography.module').then(
-        (m) => m.PhotographyModule
+      import('./pages/portfolio/portfolio.module').then(
+        (m) => m.PortfolioModule
       ),
   },
   {
-    path: 'photography/:id',
+    path: 'portfolio/:id',
     loadChildren: () =>
-      import('./pages/photography-session/photography-session.module').then(
-        (m) => m.PhotographySessionModule
+      import('./pages/portfolio-category/portfolio-category.module').then(
+        (m) => m.PortfolioCategoryModule
       ),
   },
   {
-    path: 'retouch',
+    path: 'price',
     loadChildren: () =>
-      import('./pages/retouch/retouch.module').then((m) => m.RetouchModule),
-  },
-  {
-    path: 'retouch/:id',
-    loadChildren: () =>
-      import('./pages/retouch-session/retouch-session.module').then(
-        (m) => m.RetouchSessionModule
+      import('./pages/price/price-routing.module').then(
+        (m) => m.PriceRoutingModule
       ),
   },
   {

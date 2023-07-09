@@ -1,0 +1,49 @@
+$gutter-size: 10px;
+
+.grid-item {
+  margin-bottom: $gutter-size;
+}
+
+.gutter-sizer {
+  width: $gutter-size;
+}
+
+@media screen and (max-width: 599.98px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(50% - $gutter-size);
+  }
+}
+
+.swipper-container {
+  @apply fixed inset-0 z-[11] overflow-hidden;
+}
+.button-back {
+  @apply fixed right-4 top-4 z-[13] p-1 h-8 w-8 sm:h-16 sm:w-16 rounded hover:bg-slate-50 transition-all;
+
+  &:hover {
+    svg {
+      @apply fill-black;
+    }
+  }
+  svg {
+    @apply w-full h-full fill-white;
+  }
+}
+.swiper {
+  @apply z-[12] h-full w-full;
+}
+.background {
+  @apply fixed inset-0 z-[12] bg-black;
+}
+
+:host {
+  --swiper-theme-color: white;
+}
