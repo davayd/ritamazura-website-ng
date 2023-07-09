@@ -15,12 +15,12 @@ import { NgxMasonryOptions } from 'src/app/components/ngx-masonry/ngx-masonry-op
 import { NgxMasonryComponent } from 'src/app/components/ngx-masonry/ngx-masonry.component';
 import { PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
-import { TEAM_MEMBERS } from 'assets/teamMembers';
 import { SwiperComponent } from 'swiper/angular';
 import {
   GA_EVENTS,
   GoogleAnalyticsService,
 } from 'src/app/services/google-analytics.service';
+import { SITE_MAP } from 'assets/sitemap';
 
 @Component({
   selector: 'app-photography-session',
@@ -45,15 +45,12 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
 
   imageMode = this.applicationStateService.imageMode;
   isViewerOpened$ = this.applicationStateService.isViewerOpened.asObservable();
+  SITE_MAP = SITE_MAP;
 
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();
 
   currentTeamMembers: { [key: string]: string[] } = {};
-
-  itemId$ = this.activateRoute.queryParamMap.pipe(
-    map((queryParams) => queryParams.get('itemId'))
-  );
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -66,15 +63,15 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
     this.activateRoute.paramMap
       .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {
-        const sessionUrlName = paramMap.get('id');
+        const sessionId = paramMap.get('id');
 
-        if (!sessionUrlName) {
+        if (!sessionId) {
           return;
         }
 
         const currentSessionIndex =
           this.applicationStateService.photographySessions.findIndex(
-            (i) => i.transliteratedUrl === sessionUrlName
+            (i) => i.sessionId === sessionId
           );
 
         if (currentSessionIndex < 0) {
@@ -96,7 +93,7 @@ export class PhotographySessionComponent implements OnInit, OnDestroy {
 
         if (this.currentSession) {
           this.currentTeamMembers =
-            TEAM_MEMBERS[this.currentSession?.transliteratedUrl];
+            SITE_MAP[this.currentSession?.sessionId].teamMembersMap;
         }
 
         this.cdRef.markForCheck();

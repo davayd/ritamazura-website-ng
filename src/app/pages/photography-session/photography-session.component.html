@@ -1,7 +1,7 @@
 <ng-container *ngIf="currentSession; else notFound">
   <div id="main-wrapper" class="container">
     <h2 class="detail-title">
-      {{ currentSession.title }}
+      {{ SITE_MAP[currentSession.sessionId].title }}
     </h2>
 
     <div

@@ -1,19 +1,19 @@
 import { ImageMode, PhotographySession, PhotoItem } from 'models/session';
 
-import { generateSession as genS1 } from 'assets/Ayna 08.2022, St.Petersburg/data';
-import { generateSession as genS2 } from 'assets/Olya 08.22, St.Petersburg/data';
-import { generateSession as genS3 } from 'assets/Polina 1 08.2022, St.Petersburg/data';
-import { generateSession as genS4 } from 'assets/Polina 2 08.2022, St.Petersburg/data';
-import { generateSession as genS5 } from 'assets/Polina.Studio, part. 1/data';
-import { generateSession as genS6 } from 'assets/Polina.Studio, part. 2/data';
-import { generateSession as genS7 } from 'assets/Anastasia 12.2022. Model test/data';
-import { generateSession as genS8 } from 'assets/Miron 12.2022. Model test/data';
-import { generateSession as genS9 } from 'assets/Polina 10.2022. Model test/data';
-import { generateSession as genS10 } from 'assets/Kate 02.2023/data';
-import { generateSession as genS11 } from 'assets/Lera Yaskevich 02.2023/data';
-import { generateSession as genS12 } from 'assets/Liza 03.2023/data';
-import { generateSession as genS13 } from 'assets/Maria 03.23/data';
-import { generateSession as genS14 } from 'assets/Irka 03.23/data';
+import { generateSession as genS1 } from 'assets/1/data';
+import { generateSession as genS2 } from 'assets/2/data';
+import { generateSession as genS3 } from 'assets/3/data';
+import { generateSession as genS4 } from 'assets/4/data';
+import { generateSession as genS5 } from 'assets/8/data';
+import { generateSession as genS6 } from 'assets/9/data';
+import { generateSession as genS7 } from 'assets/10/data';
+import { generateSession as genS8 } from 'assets/11/data';
+import { generateSession as genS9 } from 'assets/12/data';
+import { generateSession as genS10 } from 'assets/13/data';
+import { generateSession as genS11 } from 'assets/14/data';
+import { generateSession as genS12 } from 'assets/15/data';
+import { generateSession as genS13 } from 'assets/16/data';
+import { generateSession as genS14 } from 'assets/17/data';
 
 export function generatePhotographySessions(
   imageMode: ImageMode
@@ -36,7 +36,7 @@ export function generatePhotographySessions(
   return [s14, s13, s12, s11, s10, s9, s8, s7, s6, s5, s4, s3, s2, s1]; // Change it!
 }
 
-const order = [14, 13, 12, 11, 10, 9, 8, 7, 1, 2, 3, 4, 5, 6]; // Change it!
+const order = [17, 16, 15, 14, 13, 4, 11, 10, 9, 8, 12, 3, 2, 1]; // Change it!
 
 export function orderedSession(
   session: PhotographySession

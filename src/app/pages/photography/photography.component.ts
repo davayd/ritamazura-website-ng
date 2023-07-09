@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ImageMode, PhotographySession } from 'models/session';
 import { ApplicationStateService } from '../../services/application-state.service';
+import { SITE_MAP } from 'assets/sitemap';
 
 @Component({
   selector: 'app-photography',
@@ -13,6 +14,8 @@ export class PhotographyComponent implements OnInit {
 
   photographySessions: PhotographySession[] =
     this._applicationStateService.photographySessions;
+
+  SITE_MAP = SITE_MAP;
 
   constructor(private _applicationStateService: ApplicationStateService) {}
 

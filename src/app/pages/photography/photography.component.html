@@ -4,7 +4,7 @@
   <div class="list-container">
     <a
       *ngFor="let session of photographySessions; let idx = index"
-      [routerLink]="['./', session.transliteratedUrl]"
+      [routerLink]="['./', session.sessionId]"
       class="group relative animate__animated animate__fadeIn"
     >
       <div class="list-item-card">
@@ -13,12 +13,12 @@
           (mouseover)="over(imgElement, session.photos[1].url)"
           (mouseout)="out(imgElement, session.photos[0].url)"
           [src]="session.photos[0].url"
-          [attr.alt]="session.title"
+          [attr.alt]="SITE_MAP[session.sessionId].title"
           class="w-full h-full object-center object-cover lg:w-full lg:h-full transition"
         />
       </div>
       <h3 class="list-item-title">
-        {{ session.title }}
+        {{ SITE_MAP[session.sessionId].title }}
       </h3>
     </a>
   </div>

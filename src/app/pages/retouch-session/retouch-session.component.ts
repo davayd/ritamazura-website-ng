@@ -13,6 +13,7 @@ import {
   GA_EVENTS,
   GoogleAnalyticsService,
 } from 'src/app/services/google-analytics.service';
+import { SITE_MAP } from 'assets/sitemap';
 
 declare var juxtapose: any;
 
@@ -30,6 +31,7 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
   currentSession?: RetouchSession;
   nextSession?: RetouchSession;
   previousSession?: RetouchSession;
+  SITE_MAP = SITE_MAP;
 
   private destroy$ = new Subject<void>();
 
@@ -51,15 +53,15 @@ export class RetouchSessionComponent implements OnInit, OnDestroy {
     this.activateRoute.paramMap
       .pipe(takeUntil(this.destroy$))
       .subscribe((paramMap) => {
-        const sessionUrlName = paramMap.get('id');
+        const sessionId = paramMap.get('id');
 
-        if (!sessionUrlName) {
+        if (!sessionId) {
           return;
         }
 
         const currentSessionIndex =
           this.applicationStateService.retouchSessions.findIndex(
-            (i) => i.transliteratedUrl === sessionUrlName
+            (i) => i.sessionId === sessionId
           );
 
         if (currentSessionIndex < 0) {

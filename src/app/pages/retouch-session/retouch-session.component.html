@@ -1,7 +1,7 @@
 <div id="main-wrapper" class="container">
   <ng-container *ngIf="currentSession; else notFound">
     <h2 class="detail-title">
-      {{ currentSession.title }}
+      {{ SITE_MAP[currentSession.sessionId].title }}
     </h2>
 
     <h3 *ngIf="isCourseFolder" class="text-center mb-6 text-xs">

@@ -2,7 +2,7 @@
   <a
     *ngIf="previousSession"
     class="paginator text-left mr-auto"
-    [routerLink]="['./../', previousSession.transliteratedUrl]"
+    [routerLink]="['./../', previousSession.sessionId]"
     (click)="onPrevious()"
   >
     <div class="w-[1em] h-[1em]">
@@ -21,18 +21,18 @@
       </svg>
     </div>
     <span class="paginator-text">
-      {{ previousSession.title }}
+      {{ SITE_MAP[previousSession.sessionId].title }}
     </span>
   </a>
 
   <a
     *ngIf="nextSession"
     class="paginator text-right ml-auto"
-    [routerLink]="['./../', nextSession.transliteratedUrl]"
+    [routerLink]="['./../', nextSession.sessionId]"
     (click)="onNext()"
   >
     <span class="paginator-text">
-      {{ nextSession.title }}
+      {{ SITE_MAP[nextSession.sessionId].title }}
     </span>
     <div class="w-[1em] h-[1em]">
       <svg

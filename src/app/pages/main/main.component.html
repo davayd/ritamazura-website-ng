@@ -15,7 +15,7 @@
         [attr.height]="item.sizes[imageMode].height"
         [src]="item.url"
         [attr.alt]="item.label"
-        [routerLink]="item.label | routeToSession"
+        [routerLink]="['/', 'photography', mainRouterHelper(item.label)]"
       />
     </div>
   </ngx-masonry>

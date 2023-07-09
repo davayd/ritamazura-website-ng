@@ -15,26 +15,16 @@ export interface PhotoItem {
 
 export class PhotographySession {
   constructor(
-    public title: string,
-    public transliteratedUrl: string,
+    public sessionId: string,
     public photos: PhotoItem[]
   ) {}
 }
 
 export class RetouchSession {
   constructor(
-    public title: string,
-    public transliteratedUrl: string,
+    public sessionId: string,
     public beforeAterterPhotos: [PhotoItem, PhotoItem][]
   ) {}
 }
 
 export type ImageMode = 'mobile' | 'desktop';
-
-export class MainSession {
-  constructor(
-    public title: string,
-    public transliteratedUrl: string,
-    public photos: Record<string, PhotoItem>
-  ) {}
-}

@@ -4,18 +4,18 @@
   <div class="list-container">
     <a
       *ngFor="let session of retouchSessions"
-      [routerLink]="['./', session.transliteratedUrl]"
+      [routerLink]="['./', session.sessionId]"
       class="group relative animate__animated animate__fadeIn"
     >
       <div class="list-item-card">
         <img
           [src]="session.beforeAterterPhotos[0][0].url"
-          [attr.alt]="session.title"
+          [attr.alt]="SITE_MAP[session.sessionId].title"
           class="w-full h-full object-center object-cover lg:w-full lg:h-full"
         />
       </div>
       <h3 class="list-item-title">
-        {{ session.title }}
+        {{ SITE_MAP[session.sessionId].title }}
       </h3>
     </a>
   </div>
