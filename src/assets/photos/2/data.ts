@@ -1,5 +1,5 @@
 
-    import { PhotographySession, RetouchSession, PhotoItem, ImageMode } from "models/session";
+    import { PhotographySession, PhotoItem, ImageMode } from "models/session";
 
     export function generateSession(imageMode: ImageMode) {
       const sessionId: string = '2'
@@ -48,8 +48,8 @@
     },{
         url: `/assets/photos/2/7-${imageMode}.webp`,
         sizes: {
-            mobile: { width: 500, height: 621 },
-            desktop: { width: 1000, height: 1242 }
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
         },
         label: `7-${imageMode}.webp`
     },{
@@ -76,22 +76,22 @@
     },{
         url: `/assets/photos/2/11-${imageMode}.webp`,
         sizes: {
-            mobile: { width: 500, height: 625 },
-            desktop: { width: 1000, height: 1250 }
+            mobile: { width: 500, height: 743 },
+            desktop: { width: 1000, height: 1487 }
         },
         label: `11-${imageMode}.webp`
     },{
         url: `/assets/photos/2/12-${imageMode}.webp`,
         sizes: {
-            mobile: { width: 500, height: 625 },
-            desktop: { width: 1000, height: 1250 }
+            mobile: { width: 500, height: 680 },
+            desktop: { width: 1000, height: 1359 }
         },
         label: `12-${imageMode}.webp`
     },{
         url: `/assets/photos/2/13-${imageMode}.webp`,
         sizes: {
             mobile: { width: 500, height: 625 },
-            desktop: { width: 1000, height: 1250 }
+            desktop: { width: 1000, height: 1249 }
         },
         label: `13-${imageMode}.webp`
     },{
@@ -136,9 +136,99 @@
             desktop: { width: 1000, height: 1250 }
         },
         label: `19-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/20-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 653 },
+            desktop: { width: 1000, height: 1305 }
+        },
+        label: `20-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/21-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `21-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/22-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `22-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/23-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `23-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/24-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `24-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/25-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1251 }
+        },
+        label: `25-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/26-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `26-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/27-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `27-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/28-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `28-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/29jpg-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 750 },
+            desktop: { width: 1000, height: 1500 }
+        },
+        label: `29jpg-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/30-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 750 },
+            desktop: { width: 1000, height: 1500 }
+        },
+        label: `30-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/31-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `31-${imageMode}.webp`
+    },{
+        url: `/assets/photos/2/32-${imageMode}.webp`,
+        sizes: {
+            mobile: { width: 500, height: 625 },
+            desktop: { width: 1000, height: 1250 }
+        },
+        label: `32-${imageMode}.webp`
     },
 ];
-
 
     return new PhotographySession(sessionId, photos);
   }

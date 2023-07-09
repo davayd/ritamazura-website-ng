@@ -1,0 +1,51 @@
+{
+  "price": {
+    "title": "Price",
+    "personalShoot": "Personal shooting - 400 zł",
+    "modelTests": "Model tests  - 400 zł",
+    "snaps": "Snaps (Polaroids+video) - 250 zł",
+    "hourShoot": "One-hour shooting - 300 zł",
+    "reportage": "Reportage - 300 zł",
+    "brands": "Content for brands, products",
+    "contactDetails": "You can contact me at the links below for any information 🤍"
+  },
+  "personalShoot": {
+    "p1": "2 hours of shooting",
+    "p2": "35 - 40 finished photos",
+    "p3": "We discuss the style, the mood, and the clothes together.",
+    "p4": "Photo studio, Stylist, Makeup Artist - paid separately",
+    "p5": "Deadline for getting finished photos - up to 10 days",
+    "p6": "It's important to know 🤍",
+    "p7": "I am always open to your ideas, but in my personal style ",
+    "p8": "Also, please let me know if you do not want a shoot with you to be published on my personal website, behance, instagram"
+  },
+  "modelTests": {
+    "p1": "2 hours of shooting",
+    "p2": "40 finished photos",
+    "p3": "4 looks photographed with different lights",
+    "p4": "Photo studio, Stylist, Makeup Artist - paid separately",
+    "p5": "Deadline for getting finished photos - up to 10 days"
+  },
+  "snaps": {
+    "p1": "1 hour shooting: first part in lingerie, second part in a basic T-shirt and jeans/pants",
+    "p2": "All the good original footage",
+    "p3": "A choice of 30 photos for light retouching",
+    "p4": "Photo studio - paid separately",
+    "p5": "Deadline for getting finished photos - up to 10 days"
+  },
+  "hourShoot": {
+    "p1": "1 hour shooting",
+    "p2": "10 - 15 finished photos",
+    "p3": "Photo studio - paid separately",
+    "p4": "Deadline for getting finished photos - up to 10 days",
+    "p5": "Shooting with daylight"
+  },
+  "reportage": {
+    "p1": "1-2 hours of shooting",
+    "p2": "150-200 фотографий в цветокоррекции",
+    "p3": "Deadline for getting finished photos - up to 10 days"
+  },
+  "brands": {
+    "p1": "All details are discussed individually"
+  }
+}

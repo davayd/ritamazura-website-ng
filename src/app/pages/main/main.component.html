@@ -1,22 +1,3 @@
 <div class="container">
-  <ngx-masonry [options]="masonryOptions">
-    <div class="grid-sizer"></div>
-    <div class="gutter-sizer"></div>
-    <div
-      ngxMasonryItem
-      class="grid-item overflow-hidden hover:drop-shadow-lg transition-all cursor-pointer"
-      *ngFor="let item of gallery.photos"
-    >
-      <img
-        masonryLazy
-        loading="lazy"
-        class="w-full hover:scale-[1.01] transition-transform ease-in"
-        [attr.width]="item.sizes[imageMode].width"
-        [attr.height]="item.sizes[imageMode].height"
-        [src]="item.url"
-        [attr.alt]="item.label"
-        [routerLink]="['/', 'photography', mainRouterHelper(item.label)]"
-      />
-    </div>
-  </ngx-masonry>
+  
 </div>

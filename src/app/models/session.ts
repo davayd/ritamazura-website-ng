@@ -14,17 +14,7 @@ export interface PhotoItem {
 }
 
 export class PhotographySession {
-  constructor(
-    public sessionId: string,
-    public photos: PhotoItem[]
-  ) {}
-}
-
-export class RetouchSession {
-  constructor(
-    public sessionId: string,
-    public beforeAterterPhotos: [PhotoItem, PhotoItem][]
-  ) {}
+  constructor(public sessionId: string, public photos: PhotoItem[]) {}
 }
 
 export type ImageMode = 'mobile' | 'desktop';

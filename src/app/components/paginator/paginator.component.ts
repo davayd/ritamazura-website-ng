@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SITE_MAP } from 'assets/sitemap';
 import { PhotographySession, RetouchSession } from 'models/session';
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';

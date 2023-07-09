@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "juxtapose";
 @import "animate.css";
 
 @import "swiper/scss";
@@ -69,7 +68,7 @@ body {
 }
 .detail-title,
 .list-title {
-  @apply text-sm mt-4 mb-2 text-center;
+  @apply text-base my-8 text-center;
 }
 .logo {
   @apply font-black text-lg -tracking-wider transition-colors hover:text-neutral-600;
@@ -122,7 +121,7 @@ body {
 }
 
 .header-nav-list {
-  @apply inline-flex flex-wrap justify-end gap-6;
+  @apply inline-flex flex-wrap justify-end items-center gap-6;
 }
 
 .header-nav-item a {

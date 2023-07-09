@@ -50,8 +50,6 @@ export class PortfolioCategoryComponent implements OnInit, OnDestroy {
   @ViewChild(NgxMasonryComponent) ngxMasonry!: NgxMasonryComponent;
   private destroy$ = new Subject<void>();
 
-  currentTeamMembers: { [key: string]: string[] } = {};
-
   constructor(
     private activateRoute: ActivatedRoute,
     private applicationStateService: ApplicationStateService,
@@ -90,11 +88,6 @@ export class PortfolioCategoryComponent implements OnInit, OnDestroy {
           ];
         this.desktopCurrentSession =
           generatePhotographySessions('desktop')[currentSessionIndex];
-
-        if (this.currentSession) {
-          this.currentTeamMembers =
-            SITE_MAP[this.currentSession?.sessionId].teamMembersMap;
-        }
 
         this.cdRef.markForCheck();
       });

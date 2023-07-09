@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./pages/main/main.module').then((m) => m.MainModule),
+    redirectTo: 'portfolio',
+    pathMatch: 'full',
   },
   {
     path: 'portfolio',
@@ -24,14 +24,7 @@ const routes: Routes = [
   {
     path: 'price',
     loadChildren: () =>
-      import('./pages/price/price-routing.module').then(
-        (m) => m.PriceRoutingModule
-      ),
-  },
-  {
-    path: 'about',
-    loadChildren: () =>
-      import('./pages/about/about.module').then((m) => m.AboutModule),
+      import('./pages/price/price.module').then((m) => m.PriceModule),
   },
   {
     path: '**',

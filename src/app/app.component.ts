@@ -1,15 +1,25 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import { inOutAnimation } from './inOutAnimation';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [inOutAnimation],
 })
 export class AppComponent implements OnDestroy {
   isMenuOpened = false;
   isHandset = false;
+  isLanguageMenuOpened = false;
+
+  translocoService = inject(TranslocoService);
+
+  availableLangs = ['ru', 'en'];
+  currentLang = this.translocoService.getActiveLang();
+
   private destroy$ = new Subject<void>();
 
   constructor(private _breakpointObserver: BreakpointObserver) {
@@ -35,5 +45,11 @@ export class AppComponent implements OnDestroy {
   closeMenu() {
     this.isMenuOpened = false;
     document.body.classList.remove('header--menu-open');
+  }
+
+  setLanguage(lang: string) {
+    this.currentLang = lang;
+    this.translocoService.setActiveLang(lang);
+    this.isLanguageMenuOpened = false;
   }
 }
