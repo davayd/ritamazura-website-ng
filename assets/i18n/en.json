@@ -1,11 +1,11 @@
 {
   "price": {
     "title": "Price",
-    "personalShoot": "Personal shooting - 400 zł",
-    "modelTests": "Model tests  - 400 zł",
+    "personalShoot": "Personal shooting - 550 zł",
+    "modelTests": "Model tests  - 550 zł",
     "snaps": "Snaps (Polaroids+video) - 250 zł",
-    "hourShoot": "One-hour shooting - 300 zł",
-    "reportage": "Reportage - 300 zł",
+    "hourShoot": "One-hour shooting - 400 zł",
+    "reportage": "Reportage - 350 zł",
     "brands": "Content for brands, products",
     "contactDetails": "You can contact me at the links below for any information 🤍"
   },
@@ -42,7 +42,7 @@
   },
   "reportage": {
     "p1": "1-2 hours of shooting",
-    "p2": "150-200 фотографий в цветокоррекции",
+    "p2": "100-150 color-corrected photos",
     "p3": "Deadline for getting finished photos - up to 10 days"
   },
   "brands": {
