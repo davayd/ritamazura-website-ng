@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ritamazura-website-ng:build:production"
+              "buildTarget": "ritamazura-website-ng:build:production"
             },
             "development": {
-              "browserTarget": "ritamazura-website-ng:build:development"
+              "buildTarget": "ritamazura-website-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ritamazura-website-ng:build"
+            "buildTarget": "ritamazura-website-ng:build"
           }
         },
         "test": {
