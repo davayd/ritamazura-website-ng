@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: 'portfolio',
@@ -31,14 +30,3 @@ const routes: Routes = [
     redirectTo: '/',
   },
 ];
-
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      onSameUrlNavigation: 'reload',
-      initialNavigation: 'enabledBlocking',
-    }),
-  ],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

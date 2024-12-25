@@ -3,12 +3,16 @@ import { Component, OnDestroy, inject } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { inOutAnimation } from './inOutAnimation';
 import { TranslocoService } from '@ngneat/transloco';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [inOutAnimation],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, NgClass, NgIf],
 })
 export class AppComponent implements OnDestroy {
   isMenuOpened = false;
