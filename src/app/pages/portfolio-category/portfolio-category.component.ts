@@ -23,10 +23,11 @@ import {
 import { SITE_MAP } from 'assets/sitemap';
 
 @Component({
-  selector: 'app-portfolio-category',
-  templateUrl: './portfolio-category.component.html',
-  styleUrls: ['./portfolio-category.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-portfolio-category',
+    templateUrl: './portfolio-category.component.html',
+    styleUrls: ['./portfolio-category.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PortfolioCategoryComponent implements OnInit, OnDestroy {
   masonryOptions: NgxMasonryOptions = {

@@ -15,7 +15,8 @@ import { NgxMasonryComponent } from './ngx-masonry.component';
 import { NgxMasonryAnimations } from './ngx-masonry-options';
 
 @Directive({
-  selector: '[ngxMasonryItem], ngxMasonryItem',
+    selector: '[ngxMasonryItem], ngxMasonryItem',
+    standalone: false
 })
 export class NgxMasonryDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() prepend = false;

@@ -8,10 +8,11 @@ import {
 } from 'src/app/services/google-analytics.service';
 
 @Component({
-  selector: 'app-paginator',
-  templateUrl: './paginator.component.html',
-  styleUrls: ['./paginator.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-paginator',
+    templateUrl: './paginator.component.html',
+    styleUrls: ['./paginator.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PaginatorComponent {
   @Input() nextSession?: PhotographySession | RetouchSession;

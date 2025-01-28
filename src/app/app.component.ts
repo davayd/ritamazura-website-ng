@@ -7,12 +7,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgClass, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [inOutAnimation],
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, NgClass, NgIf],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    animations: [inOutAnimation],
+    imports: [RouterOutlet, RouterLink, NgClass, NgIf]
 })
 export class AppComponent implements OnDestroy {
   isMenuOpened = false;

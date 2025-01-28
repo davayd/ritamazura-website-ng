@@ -19,15 +19,16 @@ import { NgxMasonryDirective } from './ngx-masonry.directive';
 let masonryConstructor: any;
 
 @Component({
-  selector: '[ngx-masonry], ngx-masonry',
-  template: '<ng-content></ng-content>',
-  styles: [
-    `
+    selector: '[ngx-masonry], ngx-masonry',
+    template: '<ng-content></ng-content>',
+    styles: [
+        `
       :host {
         display: block;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class NgxMasonryComponent implements OnInit, OnChanges, OnDestroy {
   constructor(

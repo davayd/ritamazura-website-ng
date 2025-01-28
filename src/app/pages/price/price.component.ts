@@ -13,10 +13,11 @@ import {
 import { makeAccordion } from './accordion';
 
 @Component({
-  selector: 'app-price',
-  templateUrl: './price.component.html',
-  styleUrls: ['./price.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-price',
+    templateUrl: './price.component.html',
+    styleUrls: ['./price.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PriceComponent implements OnInit, AfterViewInit {
   private readonly googleAnalyticsService = inject(GoogleAnalyticsService);
