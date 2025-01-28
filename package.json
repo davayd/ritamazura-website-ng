@@ -7,7 +7,7 @@
     "serve:prod": "ng serve -c=production",
     "build": "ng build",
     "test": "ng test",
-    "deploy": "ng deploy --cname=ritamazura.com",
+    "deploy": "ng deploy --cname=ritamazura.com --dir=dist/ritamazura-website-ng/browser",
     "stats": "ng build -c=production --stats-json && webpack-bundle-analyzer dist/ritamazura-website-ng/browser/stats.json"
   },
   "private": true,
@@ -40,7 +40,6 @@
     "@types/jasmine": "~3.10.0",
     "@types/masonry-layout": "^4.2.5",
     "@types/node": "^12.11.1",
-    "angular-cli-ghpages": "^2.0.3",
     "autoprefixer": "^10.4.7",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
