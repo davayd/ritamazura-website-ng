@@ -7,7 +7,6 @@
     "serve:prod": "ng serve -c=production",
     "build": "ng build",
     "test": "ng test",
-    "deploy": "ng deploy --cname=ritamazura.com --dir=dist/ritamazura-website-ng/browser",
     "stats": "ng build -c=production --stats-json && webpack-bundle-analyzer dist/ritamazura-website-ng/browser/stats.json"
   },
   "private": true,

@@ -34,7 +34,8 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "flat",
-              "ev-emitter/ev-emitter"
+              "ev-emitter/ev-emitter",
+              "masonry-layout"
             ],
             "browser": "src/main.ts"
           },
@@ -99,9 +100,6 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

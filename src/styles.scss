@@ -1,14 +1,13 @@
+@use "animate.css";
+@use "swiper/scss";
+@use "swiper/scss/zoom";
+@use "swiper/scss/pagination";
+@use "swiper/scss/lazy";
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "animate.css";
-
-@import "swiper/scss";
-@import "swiper/scss/zoom";
-@import "swiper/scss/pagination";
-@import "swiper/scss/lazy";
 
 .swiper-pagination-fraction {
   color: white;
